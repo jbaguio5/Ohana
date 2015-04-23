@@ -1,10 +1,10 @@
-<%@page contentType="text/html" pageEncoding="ISO-8859-1" trimDirectiveWhitespaces="true"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Contact Us</title>
+        <title>Login</title>
         <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
         <link rel="stylesheet" type="text/css" href="main.css">
     </head>
@@ -18,7 +18,7 @@
                 <li><a href="about.jsp">About</a></li>
                 <li><a href="/Arcades/product">Products</a></li>
                 <li><a href="contact.jsp">Contact</a></li>
-                <c:choose>
+                    <c:choose>
                         <c:when test="username != null">
                         <li><a href="logout.jsp">Logout</a></li>
                         </c:when>
@@ -28,19 +28,14 @@
                     </c:choose>
             </ul>
         </nav>
-        <p>${flash}</p>
-        <h1 class="center">Contact Us</h1>
-        <p class="center">We will try our best to respond to your question within 24-48 hours</p>
-        <div class="legend">
-            <form action="thankyousub.html">
+        <div class="login">
+            <form action="index?action=login">
                 <fieldset class="contact">
-                    <legend>Please enter your information and/or question(s)</legend>
-                    <label for="name">Name:</label>
-                    <input type="text" value="" placeholder="enter your name"required/></br>       
-                    <label for="email">Email:</label>
-                    <input type="email" value="" placeholder="name@domain.com"required/></br>
-                    <label class="comment" for="comment">Comment:</label>         
-                    <input type="text" value="" placeholder="enter your comment"required></br></br>
+                    <legend>&#9733</legend>
+                    <label for="name">Username:</label>
+                    <input type="text" value="" placeholder=" username"required/></br>       
+                    <label for="email">Password:</label>
+                    <input type="password" value="" placeholder=" password"required/></br>
                     <input type="submit" value="Submit">
                 </fieldset>
             </form>

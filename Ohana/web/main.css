@@ -33,6 +33,12 @@ nav ul li a:visited{
     font-weight: bold;
 }
 
+nav ul li a:hover{
+    color: darkorange;
+    border-bottom: none;
+    font-weight: bolder;
+}
+
 nav ul li.selected{
     background-color: blue;
 }
@@ -60,11 +66,108 @@ h3.center{
     color: black;
 }
 
+p.about{
+    text-align: justify;
+    color: black;
+    margin: 1em 17em 2em;
+    font-family: "book antiqua";
+    font-size: 20px;
+    line-height: 2em;
+}
+
 div form{
     text-align: center;
     line-height: 200%;
 }
 
-div form ul{
-    
+fieldset {
+    padding: 1em;
+    font:100%/1 sans-serif;
+    line-height: 1em;
+}
+label {
+    float:inside;
+    width:25%;
+    margin-right:2em;
+    padding-top:0.2em;
+    text-align:right;
+    font-weight:bold;
+    line-height: 2em;
+}
+
+label.comment{
+    float:inside;
+    width:25%;
+    margin-right:0em;
+    padding-top:0.2em;
+    text-align:left;
+    font-weight:bold;
+    line-height: 2em;
+}
+
+legend{
+    font-weight: bold;
+}
+
+div.legend{
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+div.login{
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 5em;
+}
+
+#ft {
+    background: #222222;
+    clear: both;
+    padding: 1em;
+    margin-top: 5em;
+    text-align: center;
+    color: white;
+    font-family: "Lucinda Grande",Arial;
+    font-size: 12pt;
+}
+
+span.ohananame{
+    color: #ff6500;
+    font-weight: bolder;
+}
+
+.proddisp {
+    margin-bottom: 18px;
+    margin-top: 3em;
+    margin-left: 10em;
+    margin-right: 42.75em;
+    border: 1px solid darkorange;
+    padding: 10px;
+    background: #dddddd;
+    border-radius: .5em;
+    box-shadow: 10px 10px 5px orange;
+    font-weight: bold;
+    font-size: large;
+}
+
+.proddesc{
+    font-weight: bold;
+    font-size: large;
+}
+
+li nobull{
+    list-style-type: none;
+    display: inline;
+}
+
+.prodcont{
+    margin-top: 0px;
+    margin-left: 20em;
+    margin-right: 5em;
+}
+
+.imgdisp{
+    margin-right: 200em;
+    width:270px;
+    height: 206px;
 }
