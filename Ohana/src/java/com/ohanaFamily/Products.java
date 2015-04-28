@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +15,10 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+/**
+ *
+ * @author Java
+ */
 @Entity
 @Table(name = "PRODUCTS", catalog = "", schema = "FAMARCADES")
 @NamedQueries({
@@ -21,8 +26,11 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "Products.findByDescription", query = "SELECT p FROM Products p WHERE p.description = :description"),
     @NamedQuery(name = "Products.findByContent", query = "SELECT p FROM Products p WHERE p.content = :content"),
     @NamedQuery(name = "Products.findByPictype", query = "SELECT p FROM Products p WHERE p.pictype = :pictype"),
-    @NamedQuery(name = "Products.findById", query = "SELECT p FROM Products p WHERE p.id = :id")})
+    @NamedQuery(name = "Products.findById", query = "SELECT p FROM Products p WHERE p.id = :id"),
+    @NamedQuery(name = "Products.findbyPicture", query = "SELECT p FROM Products p WHERE p.picture = :picture"),
+    @NamedQuery(name = "Products.findbyPaypalvalue", query = "SELECT p FROM Products p WHERE p.paypalvalue = :paypalvalue")})
 public class Products implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Basic(optional = false)
     @NotNull
@@ -35,8 +43,9 @@ public class Products implements Serializable {
     @Column(name = "CONTENT")
     private String content;
     @Lob
+    @Basic(fetch = FetchType.LAZY)
     @Column(name = "PICTURE")
-    private Serializable picture;
+    private byte[] picture;
     @Size(max = 20)
     @Column(name = "PICTYPE")
     private String pictype;
@@ -45,6 +54,33 @@ public class Products implements Serializable {
     @Basic(optional = false)
     @Column(name = "ID")
     private Integer id;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 20)
+    @Column(name = "PAYPALVALUE")
+    private String paypalvalue;
+    @Basic(optional = true)
+    @Size(min = 1, max = 200)
+    @Column(name = "FEATURE1")
+    private String feature1;
+    @Basic(optional = true)
+    @Size(min = 1, max = 200)
+    @Column(name = "FEATURE2")
+    private String feature2;
+    @Basic(optional = true)
+    @Size(min = 1, max = 200)
+    @Column(name = "FEATURE3")
+    private String feature3;
+    @Basic(optional = true)
+    @Size(min = 1, max = 50)
+    @Column(name = "DIMENSIONS")
+    private String dimensions;
+    @Basic(optional = true)
+    @Column(name = "PRICE")
+    private Double price;
+    
+    
+    
 
     public Products() {
     }
@@ -75,11 +111,11 @@ public class Products implements Serializable {
         this.content = content;
     }
 
-    public Serializable getPicture() {
+    public byte[] getPicture() {
         return picture;
     }
 
-    public void setPicture(Serializable picture) {
+    public void setPicture(byte[] picture) {
         this.picture = picture;
     }
 
@@ -97,6 +133,54 @@ public class Products implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getPaypalvalue() {
+        return paypalvalue;
+    }
+
+    public void setPaypalvalue(String paypalvalue) {
+        this.paypalvalue = paypalvalue;
+    }
+    
+    public String getFeature1() {
+        return feature1;
+    }
+
+    public void setFeature1(String feature1) {
+        this.feature1 = feature1;
+    }
+
+    public String getFeature2() {
+        return feature2;
+    }
+
+    public void setFeature2(String feature2) {
+        this.feature2 = feature2;
+    }
+
+    public String getFeature3() {
+        return feature3;
+    }
+
+    public void setFeature3(String feature3) {
+        this.feature3 = feature3;
+    }
+
+    public String getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(String dimensions) {
+        this.dimensions = dimensions;
+    }  
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     @Override
@@ -123,5 +207,4 @@ public class Products implements Serializable {
     public String toString() {
         return "com.ohanaFamily.Products[ id=" + id + " ]";
     }
-
 }

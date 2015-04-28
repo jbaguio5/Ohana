@@ -16,7 +16,7 @@
             <ul>
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="about.jsp">About</a></li>
-                <li><a href="/Arcades/product">Products</a></li>
+                <li><a href="/Ohana/product">Products</a></li>
                 <li><a href="contact.jsp">Contact</a></li>
                     <c:choose>
                         <c:when test="username != null">

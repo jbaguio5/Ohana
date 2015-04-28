@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Products</title>
         <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
         <link rel="stylesheet" type="text/css" href="main.css">
     </head>
@@ -16,7 +16,7 @@
             <ul>
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="about.jsp">About</a></li>
-                <li><a href="/Arcades/product">Products</a></li>
+                <li><a href="/Ohana/product">Products</a></li>
                 <li><a href="contact.jsp">Contact</a></li>
                     <c:choose>
                         <c:when test="username != null">
@@ -28,11 +28,43 @@
                     </c:choose>
             </ul>
         </nav>
-        <c:forEach var="products" items="${AllProducts}">
+        <c:forEach var="products" items="${AllProducts}">    
             <div class="proddisp">
-                <img class="imgdisp" src="images/lpb-purple.jpg"alt=""/></br>
-                <a href="product?action=product=${products.description}">
+                <img class="imgdisp" src="/Ohana/ImageServlet?id=${products.id}">
+                <div class="prodfeatures">
+                    <ul>
+                        <c:choose>
+                            <c:when test="${products.feature1 != null}">
+                                <li>${products.feature1}</li>
+                                </c:when>
+                            </c:choose>
+                            <c:choose>
+                                <c:when test="${products.feature2 != null}">
+                                <li>${products.feature2}</li>
+                                </c:when>
+                            </c:choose>
+                            <c:choose>
+                                <c:when test="${products.feature1 != null}">
+                                <li>${products.feature3}</li>
+                                </c:when>
+                            </c:choose>
+                            <c:choose>
+                                <c:when test="${products.dimensions != null}">
+                                <li>Dimensions - ${products.dimensions}</li>
+                                </c:when>
+                            </c:choose>
+                    </ul>
+                </div>
+                <a href="ProductDisplay.jsp?${products.description}">
                     ${products.description}</a>
+
+                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="${products.paypalvalue}">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    Price: $${products.price}
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
             </div>
         </c:forEach>
         <div id="ft">
