@@ -1,0 +1,70 @@
+body{
+    background-color: lightblue;
+}
+
+nav{
+    background-color: lightblue;
+    margin: 10px 10px 0px 10px;
+}
+
+nav ul{
+    margin: 0px;
+    list-style-type: none;
+    padding: 5px 0px 5px 0px;
+    text-align: center;
+}
+
+nav ul li{
+    display: inline;
+    padding: 5px 10px 5px 10px;
+    font-size: 25px;
+    margin: 20px 20px;
+}
+
+nav ul li a:link {
+    color: darkorange;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+nav ul li a:visited{
+    color: purple;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+nav ul li.selected{
+    background-color: blue;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p.center{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+h1.center{
+    text-align: center;
+    color: black;
+}
+
+h3.center{
+    text-align: center;
+    color: black;
+}
+
+div form{
+    text-align: center;
+    line-height: 200%;
+}
+
+div form ul{
+    
+}
