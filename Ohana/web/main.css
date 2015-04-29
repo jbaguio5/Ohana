@@ -142,7 +142,7 @@ span.ohananame{
     margin-left: 10em;
     margin-right: 10em;
     border: 1px solid darkorange;
-    padding: 10px;
+    padding: 12px;
     background: #dddddd;
     border-radius: .5em;
     box-shadow: 10px 10px 5px orange;
@@ -151,15 +151,14 @@ span.ohananame{
 }
 
 .prodfeatures {
-    margin-left: 17em;
-    margin-right: 5em;
-    float: right;
+    margin-top: 10px;
+    margin-left: 340px;
 }
 
 .imgdisp{
-    margin-right: 200em;
+    margin-right: 70px;
     width:270px;
-    height: 206px;
+    height: 230px;
     float: left;
 }
 
@@ -186,4 +185,30 @@ table {
     width: 200em;
     height: 100%;
     border: none;
+}
+
+.regforgot {
+    margin-top: 2em;
+}
+
+.submit {
+    margin-top: 1px;
+}
+
+.button {
+    height: 40px;
+    width: 125px;
+}
+
+fieldset label {
+    display: inline-block;
+}
+
+.larger {
+    font-size: x-large;
+}
+
+.prodcontent {
+    margin-top: 10px;
+    margin-left: 325px;
 }

@@ -32,11 +32,17 @@
             <form action="index?action=login">
                 <fieldset class="contact">
                     <legend>&#9733</legend>
-                    <label for="name">Username:</label>
+                    <label for="username">Username:</label>
                     <input type="text" value="" placeholder=" username"required/></br>       
-                    <label for="email">Password:</label>
+                    <label for="password">Password:</label>
                     <input type="password" value="" placeholder=" password"required/></br>
-                    <input type="submit" value="Submit">
+                    <div class="regforgot">
+                        <input type="submit" value="Login" class="button">
+                    </div>
+                    <div class="regforgot">
+                        <a href="join.jsp" style="float: left">Register</a>
+                        <a href="forgot.jsp"style="float: right">I forgot my password!</a>
+                    </div>
                 </fieldset>
             </form>
         </div>
