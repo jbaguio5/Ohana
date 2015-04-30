@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,7 @@
 </head>
 <body>
     <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
-    <p class="center">Quality Made to Order Arcades at a fraction of the
+    <p class="center">Quality Made to Order Arcades at a fraction of the 
         cost!</p></br>
     <nav>
         <ul>
@@ -37,27 +37,23 @@
                 </c:choose>
         </ul>
     </nav>
-    <div class="boxlogin">
-        <form action="/Ohana/Login" method="post">
+    <div class="boxforgot">
+        <h1 class="center" style="color: darkorange">Password Recovery</h1>
+        <div class="contact">
+            <form action="/Ohana/ForgotPassword" method="post">
             <fieldset class="contact">
                 <legend>&#9733</legend>
                 <h3 style="color: red">${flash}</h3>
                 <label for="username">Username:</label>
                 <input type="text" name="username" value="" placeholder=" username"required/></br>
-                <label for="password">Password:</label>
-                <input type="password" name="password" value="" placeholder=" password"required/></br>
-                <div class="regforgot">
-                    <input type="submit" value="Login" class="button">
-                </div>
-                <div class="regforgot">
-                    <a href="join.jsp" style="float: left">Register</a>
-                    <a href="forgotPass.jsp"style="float: right">I forgot my password!</a>
+                    <input type="submit" value="Continue" class="button">
                 </div>
             </fieldset>
         </form>
+        </div>
     </div>
     <div id="ft">
-        <div>Ohana Family Arcades - Quality Made to Order Arcades at a
+        <div>Ohana Family Arcades - Quality Made to Order Arcades at a 
             fraction of the cost!</div>
     </div>
 </body>

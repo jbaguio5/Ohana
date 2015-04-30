@@ -107,6 +107,25 @@ p.about{
     box-shadow: 10px 10px 5px orange;
 }
 
+.boxforgot {
+    margin: 35px 160px 18px;
+    border: 1px solid darkorange;
+    padding: 35px 12px 50px 12px;
+    background: #dddddd;
+    border-radius: .5em;
+    box-shadow: 10px 10px 5px orange;
+}
+
+.boxlogin {
+    margin: 35px 160px 18px;
+    border: 1px solid darkorange;
+    padding: 35px 12px 50px 12px;
+    background: #dddddd;
+    border-radius: .5em;
+    box-shadow: 10px 10px 5px orange;
+}
+
+
 div form{
     text-align: center;
     line-height: 200%;

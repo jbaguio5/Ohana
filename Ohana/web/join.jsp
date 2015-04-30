@@ -14,7 +14,7 @@
         <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
     </form>
 
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
     <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
