@@ -18,7 +18,7 @@
 </head>
 <body>
     <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
-    <p class="center">Quality Made to Order Arcades at a fraction of the 
+    <p class="center">Quality Made to Order Arcades at a fraction of the
         cost!</p></br>
     <nav>
         <ul>
@@ -28,6 +28,7 @@
             <li><a href="contact.jsp">Contact</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.user.username != null}">
+                    <li><a href="userAccount.jsp">Account</a></li>
                     <li><a href="/Ohana/Logout">Logout</a></li>
                     </c:when>
                     <c:otherwise>
@@ -40,9 +41,9 @@
         <form action="/Ohana/Login" method="post">
             <fieldset class="contact">
                 <legend>&#9733</legend>
-                <h3>${flash}</h3>
+                <h3 style="color: red">${flash}</h3>
                 <label for="username">Username:</label>
-                <input type="text" name="username" value="" placeholder=" username"required/></br>       
+                <input type="text" name="username" value="" placeholder=" username"required/></br>
                 <label for="password">Password:</label>
                 <input type="password" name="password" value="" placeholder=" password"required/></br>
                 <div class="regforgot">
@@ -56,7 +57,7 @@
         </form>
     </div>
     <div id="ft">
-        <div>Ohana Family Arcades - Quality Made to Order Arcades at a 
+        <div>Ohana Family Arcades - Quality Made to Order Arcades at a
             fraction of the cost!</div>
     </div>
 </body>

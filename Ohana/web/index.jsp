@@ -29,6 +29,7 @@
             <li><a href="contact.jsp">Contact</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.user.username != null}">
+                    <li><a href="userAccount.jsp">Account</a></li>
                     <li><a href="/Ohana/Logout">Logout</a></li>
                     </c:when>
                     <c:otherwise>
