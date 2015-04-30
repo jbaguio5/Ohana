@@ -7,7 +7,6 @@ package com.ohanaFamily;
 
 import java.io.IOException;
 import java.util.List;
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

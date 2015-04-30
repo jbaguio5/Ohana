@@ -66,13 +66,45 @@ h3.center{
     color: black;
 }
 
+h2.welcome {
+    text-align: center;
+    color: green;
+}
+
 p.about{
     text-align: justify;
     color: black;
-    margin: 1em 17em 2em;
+    margin: 20px 150px 75px;
     font-family: "book antiqua";
     font-size: 20px;
     line-height: 2em;
+}
+
+.boxabout {
+    margin: 35px 160px 18px;
+    border: 1px solid darkorange;
+    padding: 35px 12px 12px;
+    background: #dddddd;
+    border-radius: .5em;
+    box-shadow: 10px 10px 5px orange;
+}
+
+.boxcontact {
+    margin: 35px 160px 18px;
+    border: 1px solid darkorange;
+    padding: 35px 12px 50px 12px;
+    background: #dddddd;
+    border-radius: .5em;
+    box-shadow: 10px 10px 5px orange;
+}
+
+.boxaccount {
+    margin: 35px 160px 18px;
+    border: 1px solid darkorange;
+    padding: 35px 12px 50px 12px;
+    background: #dddddd;
+    border-radius: .5em;
+    box-shadow: 10px 10px 5px orange;
 }
 
 div form{
@@ -163,8 +195,9 @@ span.ohananame{
 }
 
 .proddesc{
+    color: darkorange;
     font-weight: bold;
-    font-size: large;
+    font-size: x-large;
 }
 
 li nobull{
@@ -211,4 +244,19 @@ fieldset label {
 .prodcontent {
     margin-top: 10px;
     margin-left: 325px;
+}
+
+.cart {
+    float: right;
+}
+
+.userbycart {
+    float: right;
+    margin-top: 5px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.contact {
+    margin: 0px 100px;
 }
