@@ -52,28 +52,34 @@
                         </c:choose>
                 </ul>
             </nav>
-            <p>${flash}</p>
-            <div class="boxdeco">
-                <h1 class="center" style="color: darkorange">Contact Us</h1>
-                <div class="contact">
-                    <fieldset>
-                        <p class="center">By Email - <a href="mailto:ohanafamilyarcades@gmail.com" 
-                                                        target="_top">OhanaFamilyArcades</a></p>
-                        <p class="center">We will try our best to respond to your question within 24-48 hours</p></br>
+            <table class="productList">
+                <tr>
+                    <th>Remove?</th>
+                    <th>Product</th>
+                    <th>Picture</th>
+                    <th>PayPal Value</th>
+                    <th>Price</th>
+                    <th>Product Id</th>
+                </tr>
+                <tbody>
+                    <c:forEach var="products" items="${AllProducts}">
+                        <tr>
+                    <form action="/Ohana/RemoveProductFromDB" method="post">
+                        <td><input type="submit" value="Remove" class="button"></td>
+                        <td>${products.description}</td>
+                        <td><img class="listImg" src="/Ohana/Image?id=${products.id}"></td>
+                        <td>${products.paypalvalue}</td>
+                        <td>$${products.price}</td>
+                        <td><input type="text" name="id" value="${products.id}" size="1" readonly/></td>
+                    </form>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
 
-                        <p class="center">OR</p>
-                        <p class="center">By Mail</p></br>
-
-                        <p class="center">Ohana Family Arcades</p>
-                        <p class="center">P.O Box 7575</p>
-                        <p class="center">Austin TX, 78750</p>
-                    </fieldset>
-                </div>
-            </div>
             <div id="ft">
                 <div>Ohana Family Arcades - Quality Made to Order Arcades at a 
-                    fraction of the cost!
-                </div>
+                    fraction of the cost!</div>
             </div>
         </body>
     </html>

@@ -30,7 +30,12 @@ public class LoginServlet extends HttpServlet {
             }
             request.getSession().setAttribute("user", user);
             request.getSession().setAttribute("userid", user.getUserid());
+            
+            if (request.getSession().getAttribute("username") == "admin") {
+                request.getRequestDispatcher("admin.jsp").forward(request, response);
+            } else {
             request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
         } catch (NoResultException nre) {
             request.setAttribute("flash", "Username does not exist!");
             request.getRequestDispatcher("login.jsp").forward(request, response);

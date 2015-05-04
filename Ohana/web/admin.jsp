@@ -52,21 +52,14 @@
                         </c:choose>
                 </ul>
             </nav>
-            <p>${flash}</p>
             <div class="boxdeco">
-                <h1 class="center" style="color: darkorange">Contact Us</h1>
+                <h1 class="center" style="color: darkorange">Admin Menu</h1>
+                <p style="color: green">${flash}</p>
                 <div class="contact">
-                    <fieldset>
-                        <p class="center">By Email - <a href="mailto:ohanafamilyarcades@gmail.com" 
-                                                        target="_top">OhanaFamilyArcades</a></p>
-                        <p class="center">We will try our best to respond to your question within 24-48 hours</p></br>
-
-                        <p class="center">OR</p>
-                        <p class="center">By Mail</p></br>
-
-                        <p class="center">Ohana Family Arcades</p>
-                        <p class="center">P.O Box 7575</p>
-                        <p class="center">Austin TX, 78750</p>
+                    <fieldset style="font-size: larger">
+                        <label><a href="addProduct.jsp">Add Product</a></label>
+                        <label><a href="/Ohana/RemoveProductList">Remove Product</a></label>
+                        <label><a href="/Ohana/RemoveUserList">Remove User</a></label>
                     </fieldset>
                 </div>
             </div>
@@ -74,7 +67,6 @@
                 <div>Ohana Family Arcades - Quality Made to Order Arcades at a 
                     fraction of the cost!
                 </div>
-            </div>
         </body>
     </html>
 </div>

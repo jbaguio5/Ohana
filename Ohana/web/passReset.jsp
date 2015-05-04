@@ -20,24 +20,7 @@
     <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
     <p class="center">Quality Made to Order Arcades at a fraction of the 
         cost!</p></br>
-    <nav>
-        <ul>
-            <li><a href="index.jsp">Home</a></li>
-            <li><a href="about.jsp">About</a></li>
-            <li><a href="/Ohana/Products">Products</a></li>
-            <li><a href="contact.jsp">Contact</a></li>
-                <c:choose>
-                    <c:when test="${sessionScope.user.username != null}">
-                    <li><a href="userAccount.jsp">Account</a></li>
-                    <li><a href="/Ohana/Logout">Logout</a></li>
-                    </c:when>
-                    <c:otherwise>
-                    <li><a href="login.jsp">Login</a></li>
-                    </c:otherwise>
-                </c:choose>
-        </ul>
-    </nav>
-    <div class="boxforgot">
+    <div class="boxdeco">
         <h1 class="center" style="color: darkorange">Change Password</h1>
         <div class="contact">
             <form action="/Ohana/ChangePassword" method="post">

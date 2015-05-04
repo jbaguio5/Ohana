@@ -1,5 +1,11 @@
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1250px;
+}
+
 body{
-    background-color: lightblue;
+    background: lightblue url("/Ohana/Sign-Up-Today.png");
 }
 
 nav{
@@ -43,6 +49,21 @@ nav ul li.selected{
     background-color: blue;
 }
 
+nav.cats {
+    background-color: lightblue;
+    background: #dddddd;
+    border: 3px solid darkorange;
+    border-radius: .5em;
+    margin: 25px 180px 0px 180px;
+}
+
+nav.cats ul li a:link {
+    color: darkorange;
+    border-bottom: none;
+    font-weight: bold;
+    font-size: smaller;
+}
+
 img.center {
     display: block;
     margin-left: auto;
@@ -80,8 +101,8 @@ p.about{
     line-height: 2em;
 }
 
-.boxabout {
-    margin: 35px 160px 18px;
+.boxdeco {
+    margin: 35px 150px 18px;
     border: 1px solid darkorange;
     padding: 35px 12px 12px;
     background: #dddddd;
@@ -89,42 +110,24 @@ p.about{
     box-shadow: 10px 10px 5px orange;
 }
 
-.boxcontact {
-    margin: 35px 160px 18px;
+.sidebox {
+    margin: 53px 20px 18px 5px;
     border: 1px solid darkorange;
-    padding: 35px 12px 50px 12px;
+    padding: 2px 25px 2px 0px;
     background: #dddddd;
     border-radius: .5em;
     box-shadow: 10px 10px 5px orange;
+    text-align: center;
+    display: inline;
 }
 
-.boxaccount {
-    margin: 35px 160px 18px;
-    border: 1px solid darkorange;
-    padding: 35px 12px 50px 12px;
-    background: #dddddd;
-    border-radius: .5em;
-    box-shadow: 10px 10px 5px orange;
+.sidebox ul li {
+      list-style-type: none;
+      text-align: center;
+      font-weight: bold;
+      color: darkorange;
+      font-size: larger;
 }
-
-.boxforgot {
-    margin: 35px 160px 18px;
-    border: 1px solid darkorange;
-    padding: 35px 12px 50px 12px;
-    background: #dddddd;
-    border-radius: .5em;
-    box-shadow: 10px 10px 5px orange;
-}
-
-.boxlogin {
-    margin: 35px 160px 18px;
-    border: 1px solid darkorange;
-    padding: 35px 12px 50px 12px;
-    background: #dddddd;
-    border-radius: .5em;
-    box-shadow: 10px 10px 5px orange;
-}
-
 
 div form{
     text-align: center;
@@ -213,6 +216,33 @@ span.ohananame{
     float: left;
 }
 
+.imghomeleft{
+    margin-right: 10px;
+    margin-left: 30px;
+    width:270px;
+    height: 230px;
+    float: inside;
+}
+
+.imghomecenter{
+    margin-right: 0px;
+    width:320px;
+    height: 340px;
+    float: inside;
+}
+
+.imghomeright{
+    margin-right: 0px;
+    width:240px;
+    height: 220px;
+    float: inside;
+}
+
+.listImg {
+    width:135px;
+    height: 115px;
+}
+
 .proddesc{
     color: darkorange;
     font-weight: bold;
@@ -278,4 +308,51 @@ fieldset label {
 
 .contact {
     margin: 0px 100px;
+}
+
+.userList {
+    width: 150px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2em;
+    margin-left: 16em;
+}
+
+.userList td{
+    border: 1px solid black;
+    padding:0px 25px;
+    text-align: center;
+}
+
+.productList {
+    width: 150px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2em;
+    margin-left: 12em;
+}
+
+.productList td{
+    border: 1px solid black;
+    padding:0px 25px;
+    text-align: center;
+}
+
+#left-column {
+    float: left;
+}
+
+.noCartSignIn {
+    margin-left: 20em;
+    margin-right: 10.5em;
+    color: darkorange;
+    font-size: larger;
+    border: 2px solid black;
+    padding-left: 2px;
+    border-radius: .5em;
+}
+
+#side {
+ width: 100px;
+
 }

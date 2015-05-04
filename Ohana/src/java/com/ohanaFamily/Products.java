@@ -22,7 +22,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "PRODUCTS", catalog = "", schema = "FAMARCADES")
 @NamedQueries({
-    @NamedQuery(name = "Products.findAll", query = "SELECT p FROM Products p"),
+    @NamedQuery(name = "Products.findAll", query = "SELECT p FROM Products p order by p.id asc"),
     @NamedQuery(name = "Products.findByDescription", query = "SELECT p FROM Products p WHERE p.description = :description"),
     @NamedQuery(name = "Products.findByContent", query = "SELECT p FROM Products p WHERE p.content = :content"),
     @NamedQuery(name = "Products.findByPictype", query = "SELECT p FROM Products p WHERE p.pictype = :pictype"),
@@ -78,7 +78,10 @@ public class Products implements Serializable {
     @Basic(optional = true)
     @Column(name = "PRICE")
     private Double price;
-    
+    @Basic(optional = true)
+    @Size(min = 1, max = 50)
+    @Column(name = "PRODUCTTYPE")
+    private String productType;
     
     
 
@@ -181,6 +184,14 @@ public class Products implements Serializable {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+    
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
     }
 
     @Override
