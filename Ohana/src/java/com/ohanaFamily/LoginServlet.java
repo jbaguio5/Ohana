@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setAttribute("user", user);
             request.getSession().setAttribute("userid", user.getUserid());
             
-            if (request.getSession().getAttribute("username") == "admin") {
+            if (username.equals("admin")) {
                 request.getRequestDispatcher("admin.jsp").forward(request, response);
             } else {
             request.getRequestDispatcher("index.jsp").forward(request, response);
