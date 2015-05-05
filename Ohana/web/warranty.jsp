@@ -52,57 +52,18 @@
                         </c:choose>
                 </ul>
             </nav>
-            <p>${flash}</p>
             <div class="boxdeco">
-                <h1 class="center" style="color: darkorange">Account</h1>
-                <div class="contact">
-                    <form action="/Ohana/UpdateAccount" method="post">
-                        <fieldset>
-                            <h3>${flash}</h3>
-                            <label for="password">Change Password:</label>
-                            <input type="password" name="password" value="${sessionScope.user.password}"
-                                   size="30" placeholder=" password"required/></br>
-                            Password must be between 4-10 characters</br>
-                            <label for="password2">Confirm Password:</label>
-                            <input type="password" name="password2" value="${sessionScope.user.password}"
-                                   size="30" placeholder=" confirm password"required/></br>
-                            <label for="email">Email:</label>
-                            <input type="email" name="email" value="${sessionScope.user.email}"
-                                   size="30" placeholder=" example@mail.com"required/></br>
-                            <label for="firstname">First Name:</label>
-                            <input type="text" name="firstname" value="${sessionScope.user.firstname}"
-                                   size="30" placeholder=" John"required/></br>
-                            <label for="lastname">Last Name:</label>
-                            <input type="text" name="lastname" value="${sessionScope.user.lastname}"
-                                   size="30" placeholder=" Doe"required/></br>
-                            <label for="address">Address:</label>
-                            <input type="text" name="address" value="${sessionScope.user.address}"
-                                   size="30" placeholder=" 12345 General Drive"required/></br>
-                            <label for="address2">Address 2:</label>
-                            <input type="text" name="address2" value="${sessionScope.user.address2}"
-                                   size="30" placeholder=" Apt. 1234"/></br>
-                            <label for="city">City:</label>
-                            <input type="text" name="city" value="${sessionScope.user.city}"
-                                   size="30" placeholder=" Dallas"required/></br>
-                            <label for="state1">State:</label>
-                            <input type="text" name="state1" value="${sessionScope.user.state1}"
-                                   size="30" placeholder=" TX"required/></br>
-                            <label for="zipcode">Zip Code:</label>
-                            <input type="text" name="zipcode" value="${sessionScope.user.zipcode}"
-                                   size="30" placeholder=" 75205"required/></br>
-                            <label for="phone">Phone #:</label>
-                            <input type="text" name="phone" value="${sessionScope.user.phone}"
-                                   size="30" placeholder=" 512-123-4567"/></br>
-                            <label for="secquestion">Security Question:</label>
-                            <input type="text" name="secquestion" value="${sessionScope.user.secquestion}"
-                                   size="30" placeholder=" What is you mother's maiden name?"required/></br>
-                            <label for="secanswer">Security Answer:</label>
-                            <input type="password" name="secanswer" value="${sessionScope.user.secanswer}"
-                                   size="30" placeholder=" Security Answer"required/></br>
-                            <input type="submit" value="Update" class="button"></br>
-                        </fieldset>
-                    </form>
-                </div>
+                <h1 class="center" style="color: darkorange">Warranty</h1>
+
+                <p class="terms">All items are shipped FOB Ohana Family Arcade's facilities. The customer 
+                    MUST open and inspect the arcade before signing for the delivery. In the event that 
+                    any arcade or kit arrives damaged the customer must note the damage on the air bill, 
+                    next to the customer's signature. Additionally, in the event of a damaged shipment the 
+                    customer must open a claim with the shipper within 1 business day and cooperate with the 
+                    claim process in a timely manner. Unless otherwise stated all items come with a 30 day 
+                    warranty. All issues with items that have a manufacturer's warranty must be handled by 
+                    the manufacturer. Ohana Family Arcades will not warranty these items or work with the 
+                    manufacturer on the customer's behalf.</p>
             </div>
             <div id="ft">
                 <div>

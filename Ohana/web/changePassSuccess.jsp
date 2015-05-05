@@ -14,11 +14,19 @@
             a fraction of the cost!</p></br>
         <h1 class="center" style="color: green">${flash}</h3></br>
         <p class="center">You will be re-directed to the login page in 5 seconds...</p>
-        
-        
-    <div id="ft">
-        <div>Ohana Family Arcades - Quality Made to Order Arcades at a 
-            fraction of the cost!</div>
-    </div>
+
+
+        <div id="ft">
+            <div>
+                <a href="/Ohana/Terms">Terms</a>
+                <a href="/Ohana/Policies">Policies</a>
+                <a href="/Ohana/Warranty">Warranty</a>
+                Ohana Family Arcades - Quality Made to Order Arcades at a 
+                fraction of the cost!
+                <a href="/Ohana/Returns">Returns</a>
+                <a href="/Ohana/Contact">Contact Us</a>
+                <a href="/Ohana/Careers">Careers</a>
+            </div>
+        </div>
 </body>
 </html>

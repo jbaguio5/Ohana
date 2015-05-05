@@ -101,6 +101,28 @@ p.about{
     line-height: 2em;
 }
 
+p.terms{
+    text-align: justify;
+    color: black;
+    margin: 10px 85px 40px;
+    font-family: "book antiqua";
+    font-size: 15px;
+    line-height: 2em;
+}
+
+p.posting{
+    text-align: justify;
+    color: black;
+    margin: 1px 10px 2px;
+    font-family: "book antiqua";
+    font-size: 18px;
+    line-height: 2em;
+}
+
+.job {
+    margin: 0px 85px;
+}
+
 .boxdeco {
     margin: 35px 150px 18px;
     border: 1px solid darkorange;
@@ -183,6 +205,14 @@ div.login{
     color: white;
     font-family: "Lucinda Grande",Arial;
     font-size: 12pt;
+}
+
+#ft a {
+    display: inline-block;
+    color: darkorange;
+    margin: 0px 20px;
+    text-align: center;
+
 }
 
 span.ohananame{

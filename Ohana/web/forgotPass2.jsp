@@ -69,8 +69,16 @@
                     </form>
                 </div>
                 <div id="ft">
-                    <div>Ohana Family Arcades - Quality Made to Order Arcades at a 
-                        fraction of the cost!</div>
+                    <div>
+                    <a href="/Ohana/Terms">Terms</a>
+                    <a href="/Ohana/Policies">Policies</a>
+                    <a href="/Ohana/Warranty">Warranty</a>
+                    Ohana Family Arcades - Quality Made to Order Arcades at a 
+                    fraction of the cost!
+                    <a href="/Ohana/Returns">Returns</a>
+                    <a href="/Ohana/Contact">Contact Us</a>
+                    <a href="/Ohana/Careers">Careers</a>
+                </div>
                 </div>
         </body>
     </html>

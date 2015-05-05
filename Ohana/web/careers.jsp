@@ -52,56 +52,18 @@
                         </c:choose>
                 </ul>
             </nav>
-            <p>${flash}</p>
             <div class="boxdeco">
-                <h1 class="center" style="color: darkorange">Account</h1>
-                <div class="contact">
-                    <form action="/Ohana/UpdateAccount" method="post">
-                        <fieldset>
-                            <h3>${flash}</h3>
-                            <label for="password">Change Password:</label>
-                            <input type="password" name="password" value="${sessionScope.user.password}"
-                                   size="30" placeholder=" password"required/></br>
-                            Password must be between 4-10 characters</br>
-                            <label for="password2">Confirm Password:</label>
-                            <input type="password" name="password2" value="${sessionScope.user.password}"
-                                   size="30" placeholder=" confirm password"required/></br>
-                            <label for="email">Email:</label>
-                            <input type="email" name="email" value="${sessionScope.user.email}"
-                                   size="30" placeholder=" example@mail.com"required/></br>
-                            <label for="firstname">First Name:</label>
-                            <input type="text" name="firstname" value="${sessionScope.user.firstname}"
-                                   size="30" placeholder=" John"required/></br>
-                            <label for="lastname">Last Name:</label>
-                            <input type="text" name="lastname" value="${sessionScope.user.lastname}"
-                                   size="30" placeholder=" Doe"required/></br>
-                            <label for="address">Address:</label>
-                            <input type="text" name="address" value="${sessionScope.user.address}"
-                                   size="30" placeholder=" 12345 General Drive"required/></br>
-                            <label for="address2">Address 2:</label>
-                            <input type="text" name="address2" value="${sessionScope.user.address2}"
-                                   size="30" placeholder=" Apt. 1234"/></br>
-                            <label for="city">City:</label>
-                            <input type="text" name="city" value="${sessionScope.user.city}"
-                                   size="30" placeholder=" Dallas"required/></br>
-                            <label for="state1">State:</label>
-                            <input type="text" name="state1" value="${sessionScope.user.state1}"
-                                   size="30" placeholder=" TX"required/></br>
-                            <label for="zipcode">Zip Code:</label>
-                            <input type="text" name="zipcode" value="${sessionScope.user.zipcode}"
-                                   size="30" placeholder=" 75205"required/></br>
-                            <label for="phone">Phone #:</label>
-                            <input type="text" name="phone" value="${sessionScope.user.phone}"
-                                   size="30" placeholder=" 512-123-4567"/></br>
-                            <label for="secquestion">Security Question:</label>
-                            <input type="text" name="secquestion" value="${sessionScope.user.secquestion}"
-                                   size="30" placeholder=" What is you mother's maiden name?"required/></br>
-                            <label for="secanswer">Security Answer:</label>
-                            <input type="password" name="secanswer" value="${sessionScope.user.secanswer}"
-                                   size="30" placeholder=" Security Answer"required/></br>
-                            <input type="submit" value="Update" class="button"></br>
-                        </fieldset>
-                    </form>
+                <h1 class="center" style="color: darkorange">Careers</h1>
+
+                <div class="job">
+                    <h3 class="center">Cabinet Maker</h3>
+                    <p class="posting">Looking for an experienced cabinet maker to build and assemble 
+                        arcade cabinets.  Must have own shop or workspace to complete jobs.  Position is 
+                        compensated by production volume.  Must be able to transport finished product 
+                        to Ohana Family's facilities.</p>
+
+                    <p class="posting" style="text-align: center; margin-bottom: 25px">
+                        Send resume and photos of work done to careers@ohanafamilyarcades.com</p>
                 </div>
             </div>
             <div id="ft">

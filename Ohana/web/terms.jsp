@@ -52,57 +52,56 @@
                         </c:choose>
                 </ul>
             </nav>
-            <p>${flash}</p>
             <div class="boxdeco">
-                <h1 class="center" style="color: darkorange">Account</h1>
-                <div class="contact">
-                    <form action="/Ohana/UpdateAccount" method="post">
-                        <fieldset>
-                            <h3>${flash}</h3>
-                            <label for="password">Change Password:</label>
-                            <input type="password" name="password" value="${sessionScope.user.password}"
-                                   size="30" placeholder=" password"required/></br>
-                            Password must be between 4-10 characters</br>
-                            <label for="password2">Confirm Password:</label>
-                            <input type="password" name="password2" value="${sessionScope.user.password}"
-                                   size="30" placeholder=" confirm password"required/></br>
-                            <label for="email">Email:</label>
-                            <input type="email" name="email" value="${sessionScope.user.email}"
-                                   size="30" placeholder=" example@mail.com"required/></br>
-                            <label for="firstname">First Name:</label>
-                            <input type="text" name="firstname" value="${sessionScope.user.firstname}"
-                                   size="30" placeholder=" John"required/></br>
-                            <label for="lastname">Last Name:</label>
-                            <input type="text" name="lastname" value="${sessionScope.user.lastname}"
-                                   size="30" placeholder=" Doe"required/></br>
-                            <label for="address">Address:</label>
-                            <input type="text" name="address" value="${sessionScope.user.address}"
-                                   size="30" placeholder=" 12345 General Drive"required/></br>
-                            <label for="address2">Address 2:</label>
-                            <input type="text" name="address2" value="${sessionScope.user.address2}"
-                                   size="30" placeholder=" Apt. 1234"/></br>
-                            <label for="city">City:</label>
-                            <input type="text" name="city" value="${sessionScope.user.city}"
-                                   size="30" placeholder=" Dallas"required/></br>
-                            <label for="state1">State:</label>
-                            <input type="text" name="state1" value="${sessionScope.user.state1}"
-                                   size="30" placeholder=" TX"required/></br>
-                            <label for="zipcode">Zip Code:</label>
-                            <input type="text" name="zipcode" value="${sessionScope.user.zipcode}"
-                                   size="30" placeholder=" 75205"required/></br>
-                            <label for="phone">Phone #:</label>
-                            <input type="text" name="phone" value="${sessionScope.user.phone}"
-                                   size="30" placeholder=" 512-123-4567"/></br>
-                            <label for="secquestion">Security Question:</label>
-                            <input type="text" name="secquestion" value="${sessionScope.user.secquestion}"
-                                   size="30" placeholder=" What is you mother's maiden name?"required/></br>
-                            <label for="secanswer">Security Answer:</label>
-                            <input type="password" name="secanswer" value="${sessionScope.user.secanswer}"
-                                   size="30" placeholder=" Security Answer"required/></br>
-                            <input type="submit" value="Update" class="button"></br>
-                        </fieldset>
-                    </form>
-                </div>
+                <h1 class="center" style="color: darkorange">Terms and Conditions</h1>
+                <p class="terms">We strive for satisfaction. If you have any issues or concerns, 
+                    please let us know.  Ohana Family Arcades currently only accepts orders from 
+                    the continental USA. We reserve the right to refuse service to anyone. 
+                    Ohana Family Arcades reserves the right to make changes to this site and these 
+                    terms and conditions at any time, without notice.</p>
+
+                <h3 class="center">Disclaimer</h3>
+                <p class="terms">Ohana Family Arcades game unit kits and accessories are designed to 
+                    be used by experienced hobbyist. These units are not designed for commercial or 
+                    extended home use. They have not be tested by the Underwriter's Laboratory and 
+                    therefore, should not be left running unattended or for long periods of time. We 
+                    have conducted limited internal testing on all products except accessories, however 
+                    we take no responsibility for damages caused by improper use. These units are not 
+                    ergonomically safe and should not be used for extended periods of time without a break</p>
+
+                <p class="terms">By placing an order with Ohana Family Arcades, a customer has agreed to the 
+                    terms and conditions of the sale as indicated by this website. By placing an order at 
+                    ohanafamilyarcades.com, by phone, or in person, a customer has agreed to the total 
+                    dollar amount of the sale and authorized Ohana Family Arcades to collect payment via 
+                    the payment method the customer specified. We reserve the right to replace any item 
+                    or part with an equal or better product at our discretion.</p>
+                
+                <p class="terms">Ohana Family Arcades attempts to be as accurate as possible in our content 
+                    and pricing. However, we cannot guarantee that the product descriptions/specifications, 
+                    pricing or any other content on the site is accurate, complete, or current. In the event 
+                    that a product is listed at an incorrect price due to typographical, photographic, 
+                    technical error, or error in pricing information received from our suppliers, Ohana 
+                    Family Arcades shall have the right to refuse or cancel any orders placed for product 
+                    listed at the incorrect price. Dream Arcades reserves the right to refund payment if an 
+                    item is unavailable or on back order.</p>
+                
+                <p class="terms">Shipping rates may not be valid for rural areas or destinations considered 
+                    beyond points by our shipper. In the event that an item cannot be shipped for the shipping 
+                    fee collected Ohana Family Arcades will offer the customer the option of paying an 
+                    additional shipping fee or a provide complete refund.</p>
+                
+                <p class="terms">Delivery does not include inside delivery or setup. Drivers will not deliver up 
+                    stairs or to any location they deem unsafe. Delivery is normally made to a garage or front 
+                    door. Driver has the option of delivering just inside or outside the front door. The customer 
+                    is responsible for ensuring safe movement of the arcade after delivery.</p>
+
+                <h3 class="center">Jurisdiction and Venue</h3>
+                <p class="terms">You agree that any legal action brought against Ohana Family Arcades shall be governed 
+                    by the laws of the State of Texas without regard to its conflict of law principles. You agree that 
+                    the sole jurisdiction and venue for any litigation arising from your use of or orders made on the 
+                    ohanafamilyarcades.com sites, or orders made by phone or in person, shall be an appropriate federal 
+                    or state court located in Travis county, Texas. Neither party will be responsible or held liable for 
+                    any consequential, special, or incidental losses or damages.</p>
             </div>
             <div id="ft">
                 <div>
@@ -113,7 +112,7 @@
                     fraction of the cost!
                     <a href="/Ohana/Returns">Returns</a>
                     <a href="/Ohana/Contact">Contact Us</a>
-                    <a href="/Ohana/Careers">Careers</a>
+                    <a href="/Ohana/Careers">Careers</a>           
                 </div>
             </div>
         </body>
