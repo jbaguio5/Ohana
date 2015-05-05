@@ -30,10 +30,10 @@
                 cost!</p></br>
             <nav>
                 <ul>
-                    <li><a href="index.jsp">Home</a></li>
-                    <li><a href="about.jsp">About</a></li>
+                    <li><a href="/Ohana/Home">Home</a></li>
+                    <li><a href="/Ohana/About">About</a></li>
                     <li><a href="/Ohana/Products">Products</a></li>
-                    <li><a href="contact.jsp">Contact</a></li>
+                    <li><a href="/Ohana/Contact">Contact</a></li>
                         <c:choose>
                             <c:when test="${sessionScope.user.username != null}">
                                 <c:choose>
@@ -41,13 +41,13 @@
                                     <li><a href="admin.jsp">Admin</a></li>
                                     </c:when>
                                     <c:otherwise>
-                                    <li><a href="userAccount.jsp">Account</a></li>
+                                    <li><a href="/Ohana/Account">Account</a></li>
                                     </c:otherwise>
                                 </c:choose>
                             <li><a href="/Ohana/Logout">Logout</a></li>
                             </c:when>
                             <c:otherwise>
-                            <li><a href="login.jsp">Login</a></li>
+                            <li><a href="/Ohana/LoginMain">Login</a></li>
                             </c:otherwise>
                         </c:choose>
                 </ul>

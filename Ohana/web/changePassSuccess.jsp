@@ -6,7 +6,7 @@
         <title>Ohana Family&reg; Arcades</title>
         <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
         <link rel="stylesheet" type="text/css" href="styles/main.css">
-        <META http-equiv="refresh" content="8;URL=login.jsp">
+        <META http-equiv="refresh" content="8;URL=/Ohana/LoginMain">
     </head>
     <body>
         <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
