@@ -1,15 +1,17 @@
 <%@page contentType="text/html" pageEncoding="ISO-8859-1" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<!-- page wrapper -->
 <div id="wrapper">
     <html>
         <head>
-            <title>Ohana Family&reg; Arcades</title>
+<!-- title and shortcut icon -->            
+            <title>Ohana Family&trade; Arcades</title>
             <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
-
-
+            <link rel="stylesheet" type="text/css" href="styles/main.css">
             <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
+<!-- viewcart and logged in user display -->                    
                 <p class="userbycart" style="color: green"> ${sessionScope.user.username}</p>
                 <p class="userbycart">Logged In:</p>
                 <form class="cart" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
@@ -20,14 +22,14 @@
                     <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                 </form>
             </c:when>
-        </c:choose>
-
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        </c:choose> 
         </head>
         <body>
+<!-- company logo and motto -->            
             <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
             <p class="center">Quality Made to Order Arcades at a fraction of the 
                 cost!</p></br>
+<!-- site navigation bar -->           
             <nav>
                 <ul>
                     <li><a href="/Ohana/Home">Home</a></li>
@@ -52,43 +54,33 @@
                         </c:choose>
                 </ul>
             </nav>
-            <table class="userList">
-                <tr>
-                    <th>Remove?</th>
-                    <th>Username</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>User Id</th>
-                </tr>
-                <tbody>
-                    <c:forEach var="users" items="${AllUsers}">
-                        <tr>
-                    <form action="/Ohana/RemoveUserFromDB" method="post">
-                        <td><input type="submit" value="Remove" class="button"></td>
-                        <td>${users.username}</td>
-                        <td>${users.firstname}</td>
-                        <td>${users.lastname}</td>
-                        <td>${users.email}</td>
-                        <td><input type="text" name="id" value="${users.userid}" size="1" readonly/></td>
-                    </form>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
-
+<!-- page content -->
+            <div class="boxdeco">
+                <h1 class="center" style="color: darkorange">Returns</h1>
+                
+                <p class="terms">At Ohana Family&trade; Arcades your satisfaction is important to us. 
+                    All items sold can be returned for 30 days after purchase. All returns must 
+                    be in new or like new condition and are subject to a 20% restocking fee. 
+                    Before returning any item please e-mail support@ohanafamilyarcades.com to 
+                    obtain an RMA number. The RMA number must be clearly visible on the box. 
+                    All arcades must be properly packed and shipped via an authorized shipper. 
+                    Packages without a valid RMA number will not be accepted. Buyer is responsible 
+                    for return shipping charges including packing. Additionally shipping and 
+                    handling fees are non-refundable.</p>
+                </div>
+</div>
+<!-- footer content -->
             <div id="ft">
                 <div>
                     <a href="/Ohana/Terms">Terms</a>
                     <a href="/Ohana/Policies">Policies</a>
                     <a href="/Ohana/Warranty">Warranty</a>
-                    Ohana Family Arcades - Quality Made to Order Arcades at a 
+                    Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
                     fraction of the cost!
                     <a href="/Ohana/Returns">Returns</a>
                     <a href="/Ohana/Contact">Contact Us</a>
-                    <a href="/Ohana/Careers">Careers</a>
+                    <a href="/Ohana/Careers">Careers</a>                   
                 </div>
             </div>
         </body>
     </html>
-</div>

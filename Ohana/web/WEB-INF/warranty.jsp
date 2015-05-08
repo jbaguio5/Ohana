@@ -1,15 +1,17 @@
 <%@page contentType="text/html" pageEncoding="ISO-8859-1" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<!-- page wrapper -->
 <div id="wrapper">
     <html>
         <head>
-            <title>Ohana Family&reg; Arcades</title>
+            <!-- title and shortcut icon -->
+            <title>Ohana Family&trade; Arcades</title>
             <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
-
-
+            <link rel="stylesheet" type="text/css" href="styles/main.css">
             <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
+                    <!-- viewcart and logged in user display -->
                 <p class="userbycart" style="color: green"> ${sessionScope.user.username}</p>
                 <p class="userbycart">Logged In:</p>
                 <form class="cart" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
@@ -21,13 +23,13 @@
                 </form>
             </c:when>
         </c:choose>
-
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
         </head>
         <body>
+            <!-- company logo and motto -->
             <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
             <p class="center">Quality Made to Order Arcades at a fraction of the 
                 cost!</p></br>
+            <!-- site navigation bar -->
             <nav>
                 <ul>
                     <li><a href="/Ohana/Home">Home</a></li>
@@ -52,44 +54,33 @@
                         </c:choose>
                 </ul>
             </nav>
+            <!-- page content -->
             <div class="boxdeco">
-                <h1 class="center" style="color: darkorange">About Us</h1>
-                <h3 class="center">History</h3>
-                <p class="about">In 2014, <span class="ohananame">Ohana Family Arcades</span>
-                    setup shop in the garage of our founder's home. Since that time we have 
-                    focused on development of low cost, high quality video arcades for home 
-                    or office use.</p>
+                <h1 class="center" style="color: darkorange">Warranty</h1>
 
-                <h3 class="center">The Difference</h3>
-                <p class="about">Unlike other arcade builders we do not build our tables
-                    on an assembly line.  We build our arcades one at a time in a shop. 
-                    Unlike our competitors we do not use PC's to run our software.  We only
-                    use hi-quality PCB Board loaded games.</p>
-
-                <p class="about">Our arcades are 100% pre-built, all you have to do is slide 
-                    them into place, plug them in & start playing.</p>
-
-                <h3 class="center">Customize</h3>
-                <p class="about"><span class="ohananame">Ohana Family Arcades</span> offers dozens of 
-                    different color options, wood choices, configurations or full customization 
-                    services.</p>
-
-                <p class="about">Our video arcades meet high quality standards and each unit
-                    goes through a rigorous series of tests that take several days to complete.</p>
-
+                <p class="terms">All items are shipped FOB Ohana Family&trade; Arcade's facilities. The customer 
+                    MUST open and inspect the arcade before signing for the delivery. In the event that 
+                    any arcade or kit arrives damaged the customer must note the damage on the air bill, 
+                    next to the customer's signature. Additionally, in the event of a damaged shipment the 
+                    customer must open a claim with the shipper within 1 business day and cooperate with the 
+                    claim process in a timely manner. Unless otherwise stated all items come with a 30 day 
+                    warranty. All issues with items that have a manufacturer's warranty must be handled by 
+                    the manufacturer. Ohana Family&trade; Arcades will not warranty these items or work with the 
+                    manufacturer on the customer's behalf.</p>
             </div>
-            <div id="ft">
-                <div>
-                    <a href="/Ohana/Terms">Terms</a>
-                    <a href="/Ohana/Policies">Policies</a>
-                    <a href="/Ohana/Warranty">Warranty</a>
-                    Ohana Family Arcades - Quality Made to Order Arcades at a 
-                    fraction of the cost!
-                    <a href="/Ohana/Returns">Returns</a>
-                    <a href="/Ohana/Contact">Contact Us</a>
-                    <a href="/Ohana/Careers">Careers</a> 
-                </div>
-            </div>
-        </body>
-    </html>
 </div>
+<!-- footer content -->
+<div id="ft">
+    <div>
+        <a href="/Ohana/Terms">Terms</a>
+        <a href="/Ohana/Policies">Policies</a>
+        <a href="/Ohana/Warranty">Warranty</a>
+        Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
+        fraction of the cost!
+        <a href="/Ohana/Returns">Returns</a>
+        <a href="/Ohana/Contact">Contact Us</a>
+        <a href="/Ohana/Careers">Careers</a>
+    </div>
+</div>
+</body>
+</html>

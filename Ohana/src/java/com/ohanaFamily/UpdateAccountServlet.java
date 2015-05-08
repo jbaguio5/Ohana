@@ -1,6 +1,8 @@
 package com.ohanaFamily;
 
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -14,12 +16,10 @@ import javax.validation.ConstraintViolationException;
 @WebServlet(name = "UpdateAccountServlet", urlPatterns = {"/UpdateAccount"})
 public class UpdateAccountServlet extends HttpServlet {
 
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        //get all request parameters and set to String of same name
         String password = request.getParameter("password");
         String password2 = request.getParameter("password2");
         String email = request.getParameter("email");
@@ -33,13 +33,23 @@ public class UpdateAccountServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String secquestion = request.getParameter("secquestion");
         String secanswer = request.getParameter("secanswer");
-
+        //set user to user that is currently in the Session
+        Users user = (Users) request.getSession().getAttribute("user");
+        //make sure passwords match
         if (!password.equals(password2)) {
             request.setAttribute("flash", "Passwords don't match.");
-            request.getRequestDispatcher("userAccount.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/userAccount.jsp").forward(request, response);
         }
-
-        Users user = (Users)request.getSession().getAttribute("user");
+        //check if password has been changed
+        if (password.length() < 11) {
+            //set request password to new string
+            String passwordToHash = password;
+            //get users salt
+            String salt = user.getSalt();
+            //hash change password and set to password
+            password = getSecurePassword(passwordToHash, salt);
+        }
+        //set user attributes
         user.setPassword(password);
         user.setEmail(email);
         user.setFirstname(firstname);
@@ -60,36 +70,56 @@ public class UpdateAccountServlet extends HttpServlet {
 
         user.setSecquestion(secquestion);
         user.setSecanswer(secanswer);
-
+        //connect to database
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("OhanaPU");
         EntityManager em = emf.createEntityManager();
 
         try {
+            //merge user attributes
             em.getTransaction().begin();
             em.merge(user);
             em.getTransaction().commit();
-
+            //close entity manager
+            em.close();
+            //forward to success jsp
             request.setAttribute("flash", "Update Successful!");
-            request.getRequestDispatcher("updateSuccess.jsp").forward(request, response);
-
-        }catch (ConstraintViolationException cve) {
+            request.getRequestDispatcher("WEB-INF/updateSuccess.jsp").forward(request, response);
+            //exception handling
+        } catch (ConstraintViolationException cve) {
             request.setAttribute("flash", cve.getConstraintViolations());
-            request.getRequestDispatcher("join.jsp").forward(request, response);
-
-        } catch (Exception e) {
+            request.getRequestDispatcher("WEB-INF/join.jsp").forward(request, response);
+        } catch (ServletException | IOException e) {
             request.setAttribute("flash", e.getMessage());
-            request.getRequestDispatcher("join.jsp").forward(request, response);
-
+            request.getRequestDispatcher("WEB-INF/join.jsp").forward(request, response);
         } finally {
             em.close();
         }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    private static String getSecurePassword(String passwordToHash, String salt) {
+        String generatedPassword = null;
+        try {
+            // Create MessageDigest instance for MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            //Add password bytes to digest
+            md.update(salt.getBytes());
+            //Get the hash's bytes
+            byte[] bytes = md.digest(passwordToHash.getBytes());
+            //This bytes[] has bytes in decimal format;
+            //Convert it to hexadecimal format
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < bytes.length; i++) {
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            //Get complete hashed password in hex format
+            generatedPassword = sb.toString();
+            //exception handling
+        } catch (NoSuchAlgorithmException e) {
+            return "Error";
+        }
+        return generatedPassword;
+    }
+
     @Override
     public String getServletInfo() {
         return "Short description";

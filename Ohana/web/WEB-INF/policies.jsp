@@ -1,15 +1,17 @@
 <%@page contentType="text/html" pageEncoding="ISO-8859-1" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<!-- page wrapper -->
 <div id="wrapper">
     <html>
         <head>
-            <title>Ohana Family&reg; Arcades</title>
+<!-- title and shortcut icon -->            
+            <title>Ohana Family&trade; Arcades</title>
             <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
-
-
+            <link rel="stylesheet" type="text/css" href="styles/main.css">
             <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
+<!-- viewcart and logged in user display -->                    
                 <p class="userbycart" style="color: green"> ${sessionScope.user.username}</p>
                 <p class="userbycart">Logged In:</p>
                 <form class="cart" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
@@ -21,13 +23,13 @@
                 </form>
             </c:when>
         </c:choose>
-
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
         </head>
         <body>
+<!-- company logo and motto -->            
             <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
             <p class="center">Quality Made to Order Arcades at a fraction of the 
                 cost!</p></br>
+<!-- site navigation bar -->            
             <nav>
                 <ul>
                     <li><a href="/Ohana/Home">Home</a></li>
@@ -52,43 +54,42 @@
                         </c:choose>
                 </ul>
             </nav>
-            <table class="productList">
-                <tr>
-                    <th>Remove?</th>
-                    <th>Product</th>
-                    <th>Picture</th>
-                    <th>PayPal Value</th>
-                    <th>Price</th>
-                    <th>Product Id</th>
-                </tr>
-                <tbody>
-                    <c:forEach var="products" items="${AllProducts}">
-                        <tr>
-                    <form action="/Ohana/RemoveProductFromDB" method="post">
-                        <td><input type="submit" value="Remove" class="button"></td>
-                        <td>${products.description}</td>
-                        <td><img class="listImg" src="/Ohana/Image?id=${products.id}"></td>
-                        <td>${products.paypalvalue}</td>
-                        <td>$${products.price}</td>
-                        <td><input type="text" name="id" value="${products.id}" size="1" readonly/></td>
-                    </form>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+<!-- page content -->
+            <div class="boxdeco">
+                <h1 class="center" style="color: darkorange">Policies</h1>
+                
+                <h3 class="center">Privacy Policy</h3>
+                <p class="terms">Ohana Family&trade; Arcades has created this privacy statement in order 
+                    to demonstrate our firm commitment to privacy. The following discloses our 
+                    information gathering and dissemination practices for this website: ohanafamilyarcades.com. 
+                    We use your IP address to help diagnose problems with our server to administer 
+                    and track our Web site.</p>
+                
+                <p class="terms">This site may contain links to other sites. Ohana Family&trade; Arcades is not 
+                    responsible for the privacy practices or the content of such Web sites. Our forums may 
+                    collect and store names and email addresses in cookies on user's browsers. Other services 
+                    may also collect email address information, but this is optional and not distributed.</p>
 
+                <h3 class="center">Security</h3>
+                <p class="terms">This site has security measures in place to protect the loss, misuse, and 
+                    alteration of the information under our control. Order information such as name, address, 
+                    and credit card numbers will only be shared with our partners as required to process your 
+                    order. Contact the Web Site if you have any questions about this privacy statement or the 
+                    practices of this site. You can email: webmaster@ohanafamilyarcades.com</p>
+            </div>
+</div>
+<!-- footer content -->
             <div id="ft">
                 <div>
                     <a href="/Ohana/Terms">Terms</a>
                     <a href="/Ohana/Policies">Policies</a>
                     <a href="/Ohana/Warranty">Warranty</a>
-                    Ohana Family Arcades - Quality Made to Order Arcades at a 
+                    Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
                     fraction of the cost!
                     <a href="/Ohana/Returns">Returns</a>
                     <a href="/Ohana/Contact">Contact Us</a>
-                    <a href="/Ohana/Careers">Careers</a>
+                    <a href="/Ohana/Careers">Careers</a>                    
                 </div>
             </div>
         </body>
     </html>
-</div>

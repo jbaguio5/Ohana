@@ -19,18 +19,23 @@ public class RemoveUserListServlet extends HttpServlet {
             throws ServletException, IOException {
         
         try {
+            //connect to database
             EntityManagerFactory emf = Persistence.createEntityManagerFactory("OhanaPU");
             EntityManager em = emf.createEntityManager();
+            //query to find all users
             Query q = em.createNamedQuery("Users.findAll");
+            //make list of users
             List<Users> users = q.getResultList();
+            //set users in a request attribute
             request.setAttribute("AllUsers", users);
-            request.getRequestDispatcher("removeUser.jsp").forward(request, response);
-        } catch (IOException ioe) {
+            //close entity manager
+            em.close();
+            //forward to jsp
+            request.getRequestDispatcher("WEB-INF/removeUser.jsp").forward(request, response);
+            //exception handling
+        } catch (IOException | ServletException ioe) {
             request.setAttribute("flash", ioe.getMessage());
-            request.getRequestDispatcher("admin.jsp").forward(request, response);
-        } catch (Exception e) {
-            request.setAttribute("flash", e.getMessage());
-            request.getRequestDispatcher("admin.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/admin.jsp").forward(request, response);
         }
     }
 

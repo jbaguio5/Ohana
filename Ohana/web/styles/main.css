@@ -1,18 +1,22 @@
+/* Margin wrapper.  Prevents fullscreen to adjust Styling */
 #wrapper {
     margin-left: auto;
     margin-right: auto;
     width: 1250px;
 }
 
+/* Body Background color */
 body{
-    background: lightblue url("/Ohana/Sign-Up-Today.png");
+    background: lightblue;
 }
 
+/* Navigation wrapper styling */
 nav{
     background-color: lightblue;
     margin: 10px 10px 0px 10px;
 }
 
+/* Navigation un-ordered list wrapper styling */
 nav ul{
     margin: 0px;
     list-style-type: none;
@@ -20,6 +24,7 @@ nav ul{
     text-align: center;
 }
 
+/* Navigation list styling */
 nav ul li{
     display: inline;
     padding: 5px 10px 5px 10px;
@@ -27,28 +32,33 @@ nav ul li{
     margin: 20px 20px;
 }
 
+/* Navigation link general styling for Nav Bar */
 nav ul li a:link {
     color: darkorange;
     border-bottom: none;
     font-weight: bold;
 }
 
+/* Navigation link styling after visited */
 nav ul li a:visited{
     color: purple;
     border-bottom: none;
     font-weight: bold;
 }
 
+/* Navigation link styling after hovering over */
 nav ul li a:hover{
     color: darkorange;
     border-bottom: none;
     font-weight: bolder;
 }
 
+/* Navigation list colored box around pre-selected option/link */
 nav ul li.selected{
     background-color: blue;
 }
 
+/* Navigation wrapper for Categories */
 nav.cats {
     background-color: lightblue;
     background: #dddddd;
@@ -57,6 +67,7 @@ nav.cats {
     margin: 25px 180px 0px 180px;
 }
 
+/* Navigation un-ordered list link styling */
 nav.cats ul li a:link {
     color: darkorange;
     border-bottom: none;
@@ -64,12 +75,14 @@ nav.cats ul li a:link {
     font-size: smaller;
 }
 
+/* Centering for Images */
 img.center {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Centering for Paragraghs */
 p.center{
     text-align: center;
     color: black;
@@ -77,21 +90,25 @@ p.center{
     font-size: 20px;
 }
 
+/* Centering for Heading 1's' */
 h1.center{
     text-align: center;
     color: black;
 }
 
+/* Centering for Heading 3's' */
 h3.center{
     text-align: center;
     color: black;
 }
 
+/* Login Welcome flash Styling */
 h2.welcome {
     text-align: center;
     color: green;
 }
 
+/* About Page styling for paragraghs */
 p.about{
     text-align: justify;
     color: black;
@@ -101,6 +118,7 @@ p.about{
     line-height: 2em;
 }
 
+/* Terms Page styling for paragraphs */
 p.terms{
     text-align: justify;
     color: black;
@@ -110,6 +128,7 @@ p.terms{
     line-height: 2em;
 }
 
+/* job posting styling for paragraghs */
 p.posting{
     text-align: justify;
     color: black;
@@ -119,10 +138,12 @@ p.posting{
     line-height: 2em;
 }
 
+/* Margin styling for Careers Page */
 .job {
     margin: 0px 85px;
 }
 
+/* Styling for colored box around page content */
 .boxdeco {
     margin: 35px 150px 18px;
     border: 1px solid darkorange;
@@ -132,6 +153,7 @@ p.posting{
     box-shadow: 10px 10px 5px orange;
 }
 
+/* Wrapper styling for side box content */
 .sidebox {
     margin: 53px 20px 18px 5px;
     border: 1px solid darkorange;
@@ -143,6 +165,7 @@ p.posting{
     display: inline;
 }
 
+/* Styling for un-ordered list for side box */
 .sidebox ul li {
       list-style-type: none;
       text-align: center;
@@ -151,16 +174,20 @@ p.posting{
       font-size: larger;
 }
 
+/* wrapper for forms */
 div form{
     text-align: center;
     line-height: 200%;
 }
 
+/* wrapper for fieldset type forms */
 fieldset {
     padding: 1em;
     font:100%/1 sans-serif;
     line-height: 1em;
 }
+
+/* label styling for fieldset forms */
 label {
     float:inside;
     width:25%;
@@ -171,31 +198,25 @@ label {
     line-height: 2em;
 }
 
-label.comment{
-    float:inside;
-    width:25%;
-    margin-right:0em;
-    padding-top:0.2em;
-    text-align:left;
-    font-weight:bold;
-    line-height: 2em;
-}
-
+/* text styling for legend wrapper */
 legend{
     font-weight: bold;
 }
 
+/* wrapper legend margins */
 div.legend{
     margin-left: 250px;
     margin-right: 250px;
 }
 
+/* wrapper for login page margins */
 div.login{
     margin-left: 250px;
     margin-right: 250px;
     margin-top: 5em;
 }
 
+/* footer div styling */
 #ft {
     background: #222222;
     clear: both;
@@ -207,6 +228,7 @@ div.login{
     font-size: 12pt;
 }
 
+/* footer styling for links */
 #ft a {
     display: inline-block;
     color: darkorange;
@@ -215,11 +237,13 @@ div.login{
 
 }
 
+/* text coloring for company name */
 span.ohananame{
     color: #ff6500;
     font-weight: bolder;
 }
 
+/* Product Display wrapper styling */
 .proddisp {
     margin-bottom: 18px;
     margin-top: 3em;
@@ -234,11 +258,13 @@ span.ohananame{
     font-size: large;
 }
 
+/* Product features styling */
 .prodfeatures {
     margin-top: 10px;
     margin-left: 340px;
 }
 
+/* Product Image styling */
 .imgdisp{
     margin-right: 70px;
     width:270px;
@@ -246,89 +272,82 @@ span.ohananame{
     float: left;
 }
 
-.imghomeleft{
-    margin-right: 10px;
-    margin-left: 30px;
-    width:270px;
-    height: 230px;
-    float: inside;
-}
-
-.imghomecenter{
-    margin-right: 0px;
-    width:320px;
-    height: 340px;
-    float: inside;
-}
-
-.imghomeright{
-    margin-right: 0px;
-    width:240px;
-    height: 220px;
-    float: inside;
-}
-
+/* remove product page image styling */
 .listImg {
     width:135px;
     height: 115px;
 }
 
+/* Product description styling */
 .proddesc{
     color: darkorange;
     font-weight: bold;
     font-size: x-large;
 }
 
+/* remove bullets from lists */
 li nobull{
     list-style-type: none;
     display: inline;
 }
 
+/* Product content styling */
 .prodcont{
     margin-top: 0px;
     margin-left: 20em;
     margin-right: 5em;
 }
+
+/* inline styling for various items */
 .inline {
     display: inline;
 }
 
+/* table styling for admin page */
 table {
     width: 200em;
     height: 100%;
     border: none;
 }
 
+/* regforgot margin styling */
 .regforgot {
     margin-top: 2em;
 }
 
+/* submit button margin */
 .submit {
     margin-top: 1px;
 }
 
+/* button size styling */
 .button {
     height: 40px;
     width: 125px;
 }
 
+/* fieldset label display styling */
 fieldset label {
     display: inline-block;
 }
 
+/* larger text styling */
 .larger {
     font-size: x-large;
 }
 
+/* Alternate Product content styling */
 .prodcontent {
     margin-top: 10px;
     margin-left: 325px;
 }
 
+/* float styling for viewcart button */
 .cart {
     float: right;
 }
 
+/* logged in user styling to the right of viewcart button */
 .userbycart {
     float: right;
     margin-top: 5px;
@@ -336,10 +355,12 @@ fieldset label {
     font-weight: bold;
 }
 
+/* contact page margins */
 .contact {
     margin: 0px 100px;
 }
 
+/* remove user page styling */
 .userList {
     width: 150px;
     font-weight: bold;
@@ -348,12 +369,14 @@ fieldset label {
     margin-left: 16em;
 }
 
+/* remove user page table styling */
 .userList td{
     border: 1px solid black;
     padding:0px 25px;
     text-align: center;
 }
 
+/* remove paroduct page styling */
 .productList {
     width: 150px;
     font-weight: bold;
@@ -362,16 +385,19 @@ fieldset label {
     margin-left: 12em;
 }
 
+/* remove product page table styling */
 .productList td{
     border: 1px solid black;
     padding:0px 25px;
     text-align: center;
 }
 
+/* div wrapper for left column */
 #left-column {
     float: left;
 }
 
+/* user not logged in / no cart / no add to cart styling */
 .noCartSignIn {
     margin-left: 20em;
     margin-right: 10.5em;
@@ -380,9 +406,4 @@ fieldset label {
     border: 2px solid black;
     padding-left: 2px;
     border-radius: .5em;
-}
-
-#side {
- width: 100px;
-
 }

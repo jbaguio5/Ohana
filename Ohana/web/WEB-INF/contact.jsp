@@ -1,15 +1,17 @@
 <%@page contentType="text/html" pageEncoding="ISO-8859-1" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<!-- page wrapper -->
 <div id="wrapper">
     <html>
         <head>
-            <title>Ohana Family&reg; Arcades</title>
+<!-- title and shortcut icon -->            
+            <title>Ohana Family&trade; Arcades</title>
             <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
-
-
+            <link rel="stylesheet" type="text/css" href="styles/main.css">
             <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
+<!-- viewcart and logged in user display -->                    
                 <p class="userbycart" style="color: green"> ${sessionScope.user.username}</p>
                 <p class="userbycart">Logged In:</p>
                 <form class="cart" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
@@ -21,13 +23,13 @@
                 </form>
             </c:when>
         </c:choose>
-
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
         </head>
         <body>
+<!-- company logo and motto -->            
             <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
             <p class="center">Quality Made to Order Arcades at a fraction of the 
                 cost!</p></br>
+<!-- site navigation bar -->            
             <nav>
                 <ul>
                     <li><a href="/Ohana/Home">Home</a></li>
@@ -52,28 +54,37 @@
                         </c:choose>
                 </ul>
             </nav>
+<!-- page content -->
             <div class="boxdeco">
-                <h1 class="center" style="color: darkorange">Admin Menu</h1>
-                <p style="color: green">${flash}</p>
+                <h1 class="center" style="color: darkorange">Contact Us</h1>
                 <div class="contact">
-                    <fieldset style="font-size: larger">
-                        <label><a href="addProduct.jsp">Add Product</a></label>
-                        <label><a href="/Ohana/RemoveProductList">Remove Product</a></label>
-                        <label><a href="/Ohana/RemoveUserList">Remove User</a></label>
+                    <fieldset>
+                        <p class="center">By Email - <a href="mailto:ohanafamilyarcades@gmail.com" 
+                                                        target="_top">OhanaFamilyArcades</a></p>
+                        <p class="center">We will try our best to respond to your question within 24-48 hours</p></br>
+
+                        <p class="center">OR</p>
+                        <p class="center">By Mail</p></br>
+
+                        <p class="center">Ohana Family&trade; Arcades</p>
+                        <p class="center">P.O Box 7575</p>
+                        <p class="center">Austin TX, 78750</p>
                     </fieldset>
                 </div>
             </div>
+</div>
+<!-- footer content -->
             <div id="ft">
                 <div>
                     <a href="/Ohana/Terms">Terms</a>
                     <a href="/Ohana/Policies">Policies</a>
                     <a href="/Ohana/Warranty">Warranty</a>
-                    Ohana Family Arcades - Quality Made to Order Arcades at a 
+                    Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
                     fraction of the cost!
                     <a href="/Ohana/Returns">Returns</a>
                     <a href="/Ohana/Contact">Contact Us</a>
                     <a href="/Ohana/Careers">Careers</a>
                 </div>
+            </div>
         </body>
     </html>
-</div>

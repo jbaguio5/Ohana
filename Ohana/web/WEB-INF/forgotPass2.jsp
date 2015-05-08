@@ -1,15 +1,17 @@
 <%@page contentType="text/html" pageEncoding="ISO-8859-1" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<!-- page wrapper -->
 <div id="wrapper">
     <html>
         <head>
-            <title>Ohana Family&reg; Arcades</title>
+<!-- title and shortcut icon -->            
+            <title>Ohana Family&trade; Arcades</title>
             <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
-
-
+            <link rel="stylesheet" type="text/css" href="styles/main.css">
             <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
+<!-- viewcart and logged in user display -->                    
                 <p class="userbycart" style="color: green"> ${sessionScope.user.username}</p>
                 <p class="userbycart">Logged In:</p>
                 <form class="cart" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
@@ -21,13 +23,13 @@
                 </form>
             </c:when>
         </c:choose>
-
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
         </head>
         <body>
+<!-- company logo and motto -->            
             <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
             <p class="center">Quality Made to Order Arcades at a fraction of the 
                 cost!</p></br>
+<!-- site navigation bar -->            
             <nav>
                 <ul>
                     <li><a href="/Ohana/Home">Home</a></li>
@@ -52,69 +54,37 @@
                         </c:choose>
                 </ul>
             </nav>
+<!-- page content -->
             <div class="boxdeco">
-                <h1 class="center" style="color: darkorange">Terms and Conditions</h1>
-                <p class="terms">We strive for satisfaction. If you have any issues or concerns, 
-                    please let us know.  Ohana Family Arcades currently only accepts orders from 
-                    the continental USA. We reserve the right to refuse service to anyone. 
-                    Ohana Family Arcades reserves the right to make changes to this site and these 
-                    terms and conditions at any time, without notice.</p>
-
-                <h3 class="center">Disclaimer</h3>
-                <p class="terms">Ohana Family Arcades game unit kits and accessories are designed to 
-                    be used by experienced hobbyist. These units are not designed for commercial or 
-                    extended home use. They have not be tested by the Underwriter's Laboratory and 
-                    therefore, should not be left running unattended or for long periods of time. We 
-                    have conducted limited internal testing on all products except accessories, however 
-                    we take no responsibility for damages caused by improper use. These units are not 
-                    ergonomically safe and should not be used for extended periods of time without a break</p>
-
-                <p class="terms">By placing an order with Ohana Family Arcades, a customer has agreed to the 
-                    terms and conditions of the sale as indicated by this website. By placing an order at 
-                    ohanafamilyarcades.com, by phone, or in person, a customer has agreed to the total 
-                    dollar amount of the sale and authorized Ohana Family Arcades to collect payment via 
-                    the payment method the customer specified. We reserve the right to replace any item 
-                    or part with an equal or better product at our discretion.</p>
-                
-                <p class="terms">Ohana Family Arcades attempts to be as accurate as possible in our content 
-                    and pricing. However, we cannot guarantee that the product descriptions/specifications, 
-                    pricing or any other content on the site is accurate, complete, or current. In the event 
-                    that a product is listed at an incorrect price due to typographical, photographic, 
-                    technical error, or error in pricing information received from our suppliers, Ohana 
-                    Family Arcades shall have the right to refuse or cancel any orders placed for product 
-                    listed at the incorrect price. Dream Arcades reserves the right to refund payment if an 
-                    item is unavailable or on back order.</p>
-                
-                <p class="terms">Shipping rates may not be valid for rural areas or destinations considered 
-                    beyond points by our shipper. In the event that an item cannot be shipped for the shipping 
-                    fee collected Ohana Family Arcades will offer the customer the option of paying an 
-                    additional shipping fee or a provide complete refund.</p>
-                
-                <p class="terms">Delivery does not include inside delivery or setup. Drivers will not deliver up 
-                    stairs or to any location they deem unsafe. Delivery is normally made to a garage or front 
-                    door. Driver has the option of delivering just inside or outside the front door. The customer 
-                    is responsible for ensuring safe movement of the arcade after delivery.</p>
-
-                <h3 class="center">Jurisdiction and Venue</h3>
-                <p class="terms">You agree that any legal action brought against Ohana Family Arcades shall be governed 
-                    by the laws of the State of Texas without regard to its conflict of law principles. You agree that 
-                    the sole jurisdiction and venue for any litigation arising from your use of or orders made on the 
-                    ohanafamilyarcades.com sites, or orders made by phone or in person, shall be an appropriate federal 
-                    or state court located in Travis county, Texas. Neither party will be responsible or held liable for 
-                    any consequential, special, or incidental losses or damages.</p>
-            </div>
-            <div id="ft">
-                <div>
+                <h1 class="center" style="color: darkorange">Password Recovery</h1>
+                <div class="contact">
+                    <form action="/Ohana/ForgotPassword2" method="post">
+                        <fieldset class="contact">
+                            <legend>&#9733</legend>
+     <!-- flash message -->                            
+                            <h3 style="color: red">${flash}</h3>
+                            <label for="username">Username:</label>
+                            <input type="text" name="username" value="${requestScope.user.username}" readonly/></br>
+                            <label for="secquestion">${requestScope.user.secquestion}</label>
+                            <input type="password" name="secanswer" value="" placeholder=" security answer"required/></br>
+                            <input type="submit" value="Reset Password" class="button">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+</div>
+<!-- footer content -->                            
+                <div id="ft">
+                    <div>
                     <a href="/Ohana/Terms">Terms</a>
                     <a href="/Ohana/Policies">Policies</a>
                     <a href="/Ohana/Warranty">Warranty</a>
-                    Ohana Family Arcades - Quality Made to Order Arcades at a 
+                    Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
                     fraction of the cost!
                     <a href="/Ohana/Returns">Returns</a>
                     <a href="/Ohana/Contact">Contact Us</a>
-                    <a href="/Ohana/Careers">Careers</a>           
+                    <a href="/Ohana/Careers">Careers</a>
                 </div>
-            </div>
+                </div>
         </body>
     </html>
-</div>

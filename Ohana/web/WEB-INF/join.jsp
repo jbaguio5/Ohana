@@ -1,15 +1,17 @@
 <%@page contentType="text/html" pageEncoding="ISO-8859-1" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<!-- page wrapper -->
 <div id="wrapper">
     <html>
         <head>
-            <title>Ohana Family&reg; Arcades</title>
+<!-- title and shortcut icon -->            
+            <title>Ohana Family&trade; Arcades</title>
             <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
-
-
+            <link rel="stylesheet" type="text/css" href="styles/main.css">
             <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
+<!-- viewcart and logged in user display -->                    
                 <p class="userbycart" style="color: green"> ${sessionScope.user.username}</p>
                 <p class="userbycart">Logged In:</p>
                 <form class="cart" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
@@ -21,13 +23,13 @@
                 </form>
             </c:when>
         </c:choose>
-
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
         </head>
         <body>
+<!-- company logo and motto -->            
             <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
             <p class="center">Quality Made to Order Arcades at a fraction of the 
                 cost!</p></br>
+<!-- site navigation bar -->            
             <nav>
                 <ul>
                     <li><a href="/Ohana/Home">Home</a></li>
@@ -52,40 +54,61 @@
                         </c:choose>
                 </ul>
             </nav>
-            <div class="boxdeco">
-                <h1 class="center" style="color: darkorange">Policies</h1>
-                
-                <h3 class="center">Privacy Policy</h3>
-                <p class="terms">Ohana Family Arcades has created this privacy statement in order 
-                    to demonstrate our firm commitment to privacy. The following discloses our 
-                    information gathering and dissemination practices for this website: ohanafamilyarcades.com. 
-                    We use your IP address to help diagnose problems with our server to administer 
-                    and track our Web site.</p>
-                
-                <p class="terms">This site may contain links to other sites. Ohana Family Arcades is not 
-                    responsible for the privacy practices or the content of such Web sites. Our forums may 
-                    collect and store names and email addresses in cookies on user's browsers. Other services 
-                    may also collect email address information, but this is optional and not distributed.</p>
-
-                <h3 class="center">Security</h3>
-                <p class="terms">This site has security measures in place to protect the loss, misuse, and 
-                    alteration of the information under our control. Order information such as name, address, 
-                    and credit card numbers will only be shared with our partners as required to process your 
-                    order. Contact the Web Site if you have any questions about this privacy statement or the 
-                    practices of this site. You can email: webmaster@ohanafamilyarcades.com</p>
+<!-- page content -->
+            <div class="login">
+                <form action="/Ohana/Register" method="post">
+                    <fieldset>
+                        <legend>Register</legend>
+     <!-- flash message -->
+                        <h3>${flash}</h3>
+                        <label for="username"><font color="red">*</font> Username:</label>
+                        <input type="text" name="username" value="" placeholder=" username"required/></br>  
+                        Username must be between 4-10 characters</br>
+                        <label for="password"><font color="red">*</font> Password:</label>
+                        <input type="password" name="password" value="" placeholder=" password"required/></br>
+                        Password must be between 4-10 characters</br>
+                        <label for="password2"><font color="red">*</font> Confirm Password:</label>
+                        <input type="password" name="password2" value="" placeholder=" confirm password"required/></br>
+                        <label for="email"><font color="red">*</font> Email:</label>
+                        <input type="email" name="email" value="" placeholder=" example@mail.com"required/></br>
+                        <label for="firstname"><font color="red">*</font> First Name:</label>
+                        <input type="text" name="firstname" value="" placeholder=" John"required/></br>
+                        <label for="lastname"><font color="red">*</font> Last Name:</label>
+                        <input type="text" name="lastname" value="" placeholder=" Doe"required/></br>
+                        <label for="address"><font color="red">*</font> Address:</label>
+                        <input type="text" name="address" value="" placeholder=" 12345 General Drive"required/></br>
+                        <label for="address2">Address 2:</label>
+                        <input type="text" name="address2" value="" placeholder=" Apt. 1234"/></br>
+                        <label for="city"><font color="red">*</font> City:</label>
+                        <input type="text" name="city" value="" placeholder=" Dallas"required/></br>
+                        <label for="state1"><font color="red">*</font> State:</label>
+                        <input type="text" name="state1" value="" placeholder=" TX"required/></br>
+                        <label for="zipcode"><font color="red">*</font> Zip Code:</label>
+                        <input type="text" name="zipcode" value="" placeholder=" 75205"required/></br>
+                        <label for="phone">Phone #:</label>
+                        <input type="text" name="phone" value="" placeholder=" 512-123-4567"/></br>
+                        <label for="secquestion"><font color="red">*</font> Security Question:</label>
+                        <input type="text" name="secquestion" value="" placeholder=" What is you mother's maiden name?"required/></br>
+                        <label for="secanswer"><font color="red">*</font> Security Answer:</label>
+                        <input type="password" name="secanswer" value="" placeholder=" Security Answer"required/></br>
+                        <input type="submit" value="Register" class="button"></br>
+                        <p style="color: red" align="left">* Required</p>
+                    </fieldset>
+                </form>
             </div>
+</div>
+<!-- footer content -->
             <div id="ft">
                 <div>
                     <a href="/Ohana/Terms">Terms</a>
                     <a href="/Ohana/Policies">Policies</a>
                     <a href="/Ohana/Warranty">Warranty</a>
-                    Ohana Family Arcades - Quality Made to Order Arcades at a 
+                    Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
                     fraction of the cost!
                     <a href="/Ohana/Returns">Returns</a>
                     <a href="/Ohana/Contact">Contact Us</a>
-                    <a href="/Ohana/Careers">Careers</a>                    
+                    <a href="/Ohana/Careers">Careers</a>
                 </div>
             </div>
         </body>
     </html>
-</div>

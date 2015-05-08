@@ -1,15 +1,17 @@
 <%@page contentType="text/html" pageEncoding="ISO-8859-1" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<!-- page wrapper -->
 <div id="wrapper">
     <html>
         <head>
-            <title>Ohana Family&reg; Arcades</title>
+<!-- title and shortcut icon -->            
+            <title>Ohana Family&trade; Arcades</title>
             <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
-
-
+            <link rel="stylesheet" type="text/css" href="styles/main.css">
             <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
+<!-- viewcart and logged in user display -->                    
                 <p class="userbycart" style="color: green"> ${sessionScope.user.username}</p>
                 <p class="userbycart">Logged In:</p>
                 <form class="cart" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
@@ -21,13 +23,13 @@
                 </form>
             </c:when>
         </c:choose>
-
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
         </head>
         <body>
+<!-- company logo and motto -->            
             <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
             <p class="center">Quality Made to Order Arcades at a fraction of the 
                 cost!</p></br>
+<!-- site navigation bar -->            
             <nav>
                 <ul>
                     <li><a href="/Ohana/Home">Home</a></li>
@@ -52,31 +54,34 @@
                         </c:choose>
                 </ul>
             </nav>
+<!-- page content -->
             <div class="boxdeco">
-                <h1 class="center" style="color: darkorange">Returns</h1>
-                
-                <p class="terms">At Ohana Family Arcades your satisfaction is important to us. 
-                    All items sold can be returned for 30 days after purchase. All returns must 
-                    be in new or like new condition and are subject to a 20% restocking fee. 
-                    Before returning any item please e-mail support@ohanafamilyarcades.com to 
-                    obtain an RMA number. The RMA number must be clearly visible on the box. 
-                    All arcades must be properly packed and shipped via an authorized shipper. 
-                    Packages without a valid RMA number will not be accepted. Buyer is responsible 
-                    for return shipping charges including packing. Additionally shipping and 
-                    handling fees are non-refundable.</p>
+                <h1 class="center" style="color: darkorange">Careers</h1>
+
+                <div class="job">
+                    <h3 class="center">Cabinet Maker</h3>
+                    <p class="posting">Looking for an experienced cabinet maker to build and assemble 
+                        arcade cabinets.  Must have own shop or workspace to complete jobs.  Position is 
+                        compensated by production volume.  Must be able to transport finished product 
+                        to Ohana Family&trade; Arcade's facilities.</p>
+
+                    <p class="posting" style="text-align: center; margin-bottom: 25px">
+                        Send resume and photos of work done to careers@ohanafamilyarcades.com</p>
                 </div>
+            </div>
+</div>
+<!-- footer content -->
             <div id="ft">
                 <div>
                     <a href="/Ohana/Terms">Terms</a>
                     <a href="/Ohana/Policies">Policies</a>
                     <a href="/Ohana/Warranty">Warranty</a>
-                    Ohana Family Arcades - Quality Made to Order Arcades at a 
+                    Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
                     fraction of the cost!
                     <a href="/Ohana/Returns">Returns</a>
                     <a href="/Ohana/Contact">Contact Us</a>
-                    <a href="/Ohana/Careers">Careers</a>                   
+                    <a href="/Ohana/Careers">Careers</a>
                 </div>
             </div>
         </body>
     </html>
-</div>

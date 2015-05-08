@@ -1,15 +1,17 @@
 <%@page contentType="text/html" pageEncoding="ISO-8859-1" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<!-- page wrapper -->
 <div id="wrapper">
     <html>
         <head>
-            <title>Ohana Family&reg; Arcades</title>
+<!-- title and shortcut icon -->            
+            <title>Ohana Family&trade; Arcades</title>
             <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
-
-
+            <link rel="stylesheet" type="text/css" href="styles/main.css">
             <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
+<!-- viewcart and logged in user display -->                    
                 <p class="userbycart" style="color: green"> ${sessionScope.user.username}</p>
                 <p class="userbycart">Logged In:</p>
                 <form class="cart" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
@@ -21,13 +23,13 @@
                 </form>
             </c:when>
         </c:choose>
-
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
         </head>
         <body>
+<!-- company logo and motto -->            
             <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
             <p class="center">Quality Made to Order Arcades at a fraction of the 
                 cost!</p></br>
+<!-- site navigation bar -->            
             <nav>
                 <ul>
                     <li><a href="/Ohana/Home">Home</a></li>
@@ -52,64 +54,36 @@
                         </c:choose>
                 </ul>
             </nav>
-            <p>${flash}</p>
+<!-- page content -->
             <div class="boxdeco">
-                <h1 class="center" style="color: darkorange">Account</h1>
-                <div class="contact">
-                    <form action="/Ohana/UpdateAccount" method="post">
-                        <fieldset>
-                            <h3>${flash}</h3>
-                            <label for="password">Change Password:</label>
-                            <input type="password" name="password" value="${sessionScope.user.password}"
-                                   size="30" placeholder=" password"required/></br>
-                            Password must be between 4-10 characters</br>
-                            <label for="password2">Confirm Password:</label>
-                            <input type="password" name="password2" value="${sessionScope.user.password}"
-                                   size="30" placeholder=" confirm password"required/></br>
-                            <label for="email">Email:</label>
-                            <input type="email" name="email" value="${sessionScope.user.email}"
-                                   size="30" placeholder=" example@mail.com"required/></br>
-                            <label for="firstname">First Name:</label>
-                            <input type="text" name="firstname" value="${sessionScope.user.firstname}"
-                                   size="30" placeholder=" John"required/></br>
-                            <label for="lastname">Last Name:</label>
-                            <input type="text" name="lastname" value="${sessionScope.user.lastname}"
-                                   size="30" placeholder=" Doe"required/></br>
-                            <label for="address">Address:</label>
-                            <input type="text" name="address" value="${sessionScope.user.address}"
-                                   size="30" placeholder=" 12345 General Drive"required/></br>
-                            <label for="address2">Address 2:</label>
-                            <input type="text" name="address2" value="${sessionScope.user.address2}"
-                                   size="30" placeholder=" Apt. 1234"/></br>
-                            <label for="city">City:</label>
-                            <input type="text" name="city" value="${sessionScope.user.city}"
-                                   size="30" placeholder=" Dallas"required/></br>
-                            <label for="state1">State:</label>
-                            <input type="text" name="state1" value="${sessionScope.user.state1}"
-                                   size="30" placeholder=" TX"required/></br>
-                            <label for="zipcode">Zip Code:</label>
-                            <input type="text" name="zipcode" value="${sessionScope.user.zipcode}"
-                                   size="30" placeholder=" 75205"required/></br>
-                            <label for="phone">Phone #:</label>
-                            <input type="text" name="phone" value="${sessionScope.user.phone}"
-                                   size="30" placeholder=" 512-123-4567"/></br>
-                            <label for="secquestion">Security Question:</label>
-                            <input type="text" name="secquestion" value="${sessionScope.user.secquestion}"
-                                   size="30" placeholder=" What is you mother's maiden name?"required/></br>
-                            <label for="secanswer">Security Answer:</label>
-                            <input type="password" name="secanswer" value="${sessionScope.user.secanswer}"
-                                   size="30" placeholder=" Security Answer"required/></br>
-                            <input type="submit" value="Update" class="button"></br>
-                        </fieldset>
-                    </form>
-                </div>
+                <form action="/Ohana/Login" method="post">
+                    <fieldset class="contact">
+                        <legend>&#9733</legend>
+     <!-- flash message -->                        
+                        <h3 style="color: red">${flash}</h3>
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" value="" placeholder=" username"required/></br>
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" value="" placeholder=" password"required/></br>
+                        <div class="regforgot">
+                            <input type="submit" value="Login" class="button">
+                        </div>
+     <!-- register and forgot pass -->
+                        <div class="regforgot">
+                            <a href="/Ohana/Join" style="float: left">Register</a>
+                            <a href="/Ohana/ForgotPass"style="float: right">I forgot my password!</a>
+                        </div>
+                    </fieldset>
+                </form>
             </div>
+</div>
+<!-- footer content -->
             <div id="ft">
                 <div>
                     <a href="/Ohana/Terms">Terms</a>
                     <a href="/Ohana/Policies">Policies</a>
                     <a href="/Ohana/Warranty">Warranty</a>
-                    Ohana Family Arcades - Quality Made to Order Arcades at a 
+                    Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
                     fraction of the cost!
                     <a href="/Ohana/Returns">Returns</a>
                     <a href="/Ohana/Contact">Contact Us</a>
@@ -118,4 +92,3 @@
             </div>
         </body>
     </html>
-</div>

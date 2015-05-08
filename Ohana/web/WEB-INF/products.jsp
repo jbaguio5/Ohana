@@ -1,15 +1,17 @@
 <%@page contentType="text/html" pageEncoding="ISO-8859-1" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<!-- page wrapper -->
 <div id="wrapper">
     <html>
         <head>
-            <title>Ohana Family&reg; Arcades</title>
+<!-- title and shortcut icon -->            
+            <title>Ohana Family&trade; Arcades</title>
             <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
-
-
+            <link rel="stylesheet" type="text/css" href="styles/main.css">
             <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
+<!-- viewcart and logged in user display -->                    
                 <p class="userbycart" style="color: green"> ${sessionScope.user.username}</p>
                 <p class="userbycart">Logged In:</p>
                 <form class="cart" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
@@ -21,13 +23,13 @@
                 </form>
             </c:when>
         </c:choose>
-
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
         </head>
         <body>
+<!-- company logo and motto -->            
             <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
             <p class="center">Quality Made to Order Arcades at a fraction of the 
                 cost!</p></br>
+<!-- site navigation bar -->            
             <nav>
                 <ul>
                     <li><a href="/Ohana/Home">Home</a></li>
@@ -52,26 +54,80 @@
                         </c:choose>
                 </ul>
             </nav>
-            <div class="boxdeco">
-                <h1 class="center" style="color: darkorange">Careers</h1>
-
-                <div class="job">
-                    <h3 class="center">Cabinet Maker</h3>
-                    <p class="posting">Looking for an experienced cabinet maker to build and assemble 
-                        arcade cabinets.  Must have own shop or workspace to complete jobs.  Position is 
-                        compensated by production volume.  Must be able to transport finished product 
-                        to Ohana Family's facilities.</p>
-
-                    <p class="posting" style="text-align: center; margin-bottom: 25px">
-                        Send resume and photos of work done to careers@ohanafamilyarcades.com</p>
-                </div>
+<!-- page content -->
+            <div>
+     <!-- categories -->
+                <nav class="cats">
+                    <ul>
+                        <p class="center">Categories:</p>
+                        <li><a href="/Ohana/Products">All</a></li>
+                        <li><a href="/Ohana/Buttons">Buttons</a></li>
+                        <li><a href="/Ohana/Joysticks">Joysticks</a></li>
+                        <li><a href="/Ohana/GameBoards">Game Boards</a></li>
+                        <li><a href="/Ohana/CabinetParts">Cabinet Parts</a></li>
+                        <li><a href="/Ohana/Arcades">Arcades</a></li>
+                    </ul>
+                </nav>
             </div>
+            <c:forEach var="products" items="${AllProducts}">
+     <!-- product details -->
+                <div class="proddisp">
+                    <img class="imgdisp" src="/Ohana/Image?id=${products.id}">
+                    <div class="proddesc">
+                        <a>${products.description}</a>
+                    </div>
+                    <div class="prodcontent">
+                        ${products.content}
+                    </div>
+                    <ul class="prodfeatures">
+                        <c:choose>
+                            <c:when test="${products.feature1 != null}">
+                                <li>${products.feature1}</li>
+                                </c:when>
+                            </c:choose>
+                            <c:choose>
+                                <c:when test="${products.feature2 != null}">
+                                <li>${products.feature2}</li>
+                                </c:when>
+                            </c:choose>
+                            <c:choose>
+                                <c:when test="${products.feature1 != null}">
+                                <li>${products.feature3}</li>
+                                </c:when>
+                            </c:choose>
+                            <c:choose>
+                                <c:when test="${products.dimensions != null}">
+                                <li>Dimensions - ${products.dimensions}</li>
+                                </c:when>
+                            </c:choose>
+                    </ul>
+                    <c:choose>
+                        <c:when test="${sessionScope.user.username != null}">
+     <!-- PayPal button -->
+                            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="${products.paypalvalue}">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <a style="float: right">Price: $${products.price}</a>
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                        </c:when>
+                        <c:otherwise>
+     <!-- no PayPal button Need to Sign In -->
+                            <a href="login.jsp" style="text-decoration: none"><p class="noCartSignIn">Login to Add to Cart</p></a>
+                            <a style="float: right">Price: $${products.price}</a></br>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+            </c:forEach>
+</div>
+<!-- footer content -->
             <div id="ft">
                 <div>
                     <a href="/Ohana/Terms">Terms</a>
                     <a href="/Ohana/Policies">Policies</a>
                     <a href="/Ohana/Warranty">Warranty</a>
-                    Ohana Family Arcades - Quality Made to Order Arcades at a 
+                    Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
                     fraction of the cost!
                     <a href="/Ohana/Returns">Returns</a>
                     <a href="/Ohana/Contact">Contact Us</a>
@@ -80,4 +136,3 @@
             </div>
         </body>
     </html>
-</div>

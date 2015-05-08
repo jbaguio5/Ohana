@@ -1,15 +1,17 @@
 <%@page contentType="text/html" pageEncoding="ISO-8859-1" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<!-- page wrapper -->
 <div id="wrapper">
     <html>
         <head>
-            <title>Ohana Family&reg; Arcades</title>
+<!-- title and shortcut icon -->            
+            <title>Ohana Family&trade; Arcades</title>
             <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
-
-
+            <link rel="stylesheet" type="text/css" href="styles/main.css">
             <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
+<!-- viewcart and logged in user display -->                    
                 <p class="userbycart" style="color: green"> ${sessionScope.user.username}</p>
                 <p class="userbycart">Logged In:</p>
                 <form class="cart" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
@@ -21,13 +23,13 @@
                 </form>
             </c:when>
         </c:choose>
-
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
         </head>
         <body>
+<!-- company logo and motto -->            
             <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
             <p class="center">Quality Made to Order Arcades at a fraction of the 
-                cost!</p>
+                cost!</p></br>
+<!-- site navigation bar -->            
             <nav>
                 <ul>
                     <li><a href="/Ohana/Home">Home</a></li>
@@ -52,39 +54,45 @@
                         </c:choose>
                 </ul>
             </nav>
-            <c:choose>
-                <c:when test="${sessionScope.user.username != null}">
-                    <h2 class="welcome">Welcome ${sessionScope.user.firstname}</h2>
-                </c:when>
-            </c:choose>
-                    <h3>${flash}</h3>
-                    <div class="boxdeco">
-                <div>
-                    <p class="center">Welcome to Ohana Family&trade; Arcades</p>
-                    <p class="center">We offer fully built arcades as well as parts needed 
-                        for your own build!</p></br>
-                </div>
-                <div>
-                        <iframe width="300" height="214" src="//www.cincopa.com/media-platform/iframe.aspx?fid=AACA_jMIOhqY" frameborder="0" allowfullscreen scrolling="no"></iframe>
-                        <iframe width="300" height="214" src="//www.cincopa.com/media-platform/iframe.aspx?fid=AUEAAj81O1de" frameborder="0" allowfullscreen scrolling="no"></iframe>
-                        <iframe width="300" height="214" src="//www.cincopa.com/media-platform/iframe.aspx?fid=AYFAghMROp3e" frameborder="0" allowfullscreen scrolling="no"></iframe>
-                </div>
-                <div style="margin-top: 3em">
-                    <a href="join.jsp"><img class="center" src="images/Sign-Up-Today.png"/></a></br>
-                </div>
+<!-- page content -->
+            <div class="boxdeco">
+                <h1 class="center" style="color: darkorange">About Us</h1>
+                <h3 class="center">History</h3>
+                <p class="about">In 2014, <span class="ohananame">Ohana Family&trade; Arcades</span>
+                    setup shop in the garage of our founder's home. Since that time we have 
+                    focused on development of low cost, high quality video arcades for home 
+                    or office use.</p>
+
+                <h3 class="center">The Difference</h3>
+                <p class="about">Unlike other arcade builders we do not build our tables
+                    on an assembly line.  We build our arcades one at a time in a shop. 
+                    Unlike our competitors we do not use PC's to run our software.  We only
+                    use hi-quality PCB Board loaded games.</p>
+
+                <p class="about">Our arcades are 100% pre-built, all you have to do is slide 
+                    them into place, plug them in & start playing.</p>
+
+                <h3 class="center">Customize</h3>
+                <p class="about"><span class="ohananame">Ohana Family&trade; Arcades</span> offers dozens of 
+                    different color options, wood choices, configurations or full customization 
+                    services.</p>
+
+                <p class="about">Our video arcades meet high quality standards and each unit
+                    goes through a rigorous series of tests that take several days to complete.</p>
             </div>
+</div>
+<!-- footer content -->
             <div id="ft">
                 <div>
                     <a href="/Ohana/Terms">Terms</a>
                     <a href="/Ohana/Policies">Policies</a>
                     <a href="/Ohana/Warranty">Warranty</a>
-                    Ohana Family Arcades - Quality Made to Order Arcades at a 
+                    Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
                     fraction of the cost!
                     <a href="/Ohana/Returns">Returns</a>
                     <a href="/Ohana/Contact">Contact Us</a>
-                    <a href="/Ohana/Careers">Careers</a>
+                    <a href="/Ohana/Careers">Careers</a> 
                 </div>
             </div>
         </body>
     </html>
-</div>

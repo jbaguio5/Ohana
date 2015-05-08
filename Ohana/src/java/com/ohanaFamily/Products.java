@@ -15,13 +15,10 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-/**
- *
- * @author Java
- */
 @Entity
 @Table(name = "PRODUCTS", catalog = "", schema = "FAMARCADES")
 @NamedQueries({
+    //jpql named queries
     @NamedQuery(name = "Products.findAll", query = "SELECT p FROM Products p order by p.id asc"),
     @NamedQuery(name = "Products.findByDescription", query = "SELECT p FROM Products p WHERE p.description = :description"),
     @NamedQuery(name = "Products.findByContent", query = "SELECT p FROM Products p WHERE p.content = :content"),
@@ -30,7 +27,7 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "Products.findbyPicture", query = "SELECT p FROM Products p WHERE p.picture = :picture"),
     @NamedQuery(name = "Products.findbyPaypalvalue", query = "SELECT p FROM Products p WHERE p.paypalvalue = :paypalvalue")})
 public class Products implements Serializable {
-
+    //privat fields
     private static final long serialVersionUID = 1L;
     @Basic(optional = false)
     @NotNull
@@ -91,13 +88,13 @@ public class Products implements Serializable {
     public Products(Integer id) {
         this.id = id;
     }
-
+    //products constructor
     public Products(Integer id, String description, String content) {
         this.id = id;
         this.description = description;
         this.content = content;
     }
-
+    //setters and getters
     public String getDescription() {
         return description;
     }

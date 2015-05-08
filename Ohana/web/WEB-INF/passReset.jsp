@@ -1,15 +1,17 @@
 <%@page contentType="text/html" pageEncoding="ISO-8859-1" trimDirectiveWhitespaces="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<!-- page wrapper -->
 <div id="wrapper">
     <html>
         <head>
-            <title>Ohana Family&reg; Arcades</title>
+<!-- title and shortcut icon -->            
+            <title>Ohana Family&trade; Arcades</title>
             <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
-
-
-            <c:choose>
+            <link rel="stylesheet" type="text/css" href="styles/main.css">            
+        <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
+<!-- viewcart and logged in user display -->                    
                 <p class="userbycart" style="color: green"> ${sessionScope.user.username}</p>
                 <p class="userbycart">Logged In:</p>
                 <form class="cart" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
@@ -21,65 +23,45 @@
                 </form>
             </c:when>
         </c:choose>
-
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
         </head>
         <body>
+<!-- company logo and motto -->            
             <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
             <p class="center">Quality Made to Order Arcades at a fraction of the 
                 cost!</p></br>
-            <nav>
-                <ul>
-                    <li><a href="/Ohana/Home">Home</a></li>
-                    <li><a href="/Ohana/About">About</a></li>
-                    <li><a href="/Ohana/Products">Products</a></li>
-                    <li><a href="/Ohana/Contact">Contact</a></li>
-                        <c:choose>
-                            <c:when test="${sessionScope.user.username != null}">
-                                <c:choose>
-                                    <c:when test="${sessionScope.user.username == 'admin'}">
-                                    <li><a href="admin.jsp">Admin</a></li>
-                                    </c:when>
-                                    <c:otherwise>
-                                    <li><a href="/Ohana/Account">Account</a></li>
-                                    </c:otherwise>
-                                </c:choose>
-                            <li><a href="/Ohana/Logout">Logout</a></li>
-                            </c:when>
-                            <c:otherwise>
-                            <li><a href="/Ohana/LoginMain">Login</a></li>
-                            </c:otherwise>
-                        </c:choose>
-                </ul>
-            </nav>
+<!-- page content -->            
             <div class="boxdeco">
-                <h1 class="center" style="color: darkorange">Password Recovery</h1>
+                <h1 class="center" style="color: darkorange">Change Password</h1>
                 <div class="contact">
-                    <form action="/Ohana/ForgotPassword2" method="post">
+                    <form action="/Ohana/ChangePassword" method="post">
                         <fieldset class="contact">
                             <legend>&#9733</legend>
                             <h3 style="color: red">${flash}</h3>
                             <label for="username">Username:</label>
                             <input type="text" name="username" value="${requestScope.user.username}" readonly/></br>
-                            <label for="secquestion">${requestScope.user.secquestion}</label>
-                            <input type="password" name="secanswer" value="" placeholder=" security answer"required/></br>
-                            <input type="submit" value="Reset Password" class="button">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" name="newPassword" value="" placeholder=" new password"required/></br>
+                            Password must be between 4-10 characters</br>
+                            <label for="confirmNewPass">Confirm Password</label>
+                            <input type="password" name="confirmNewPass" value="" placeholder=" confirm new password"required/></br>
+                            <input type="submit" value="Change Password" class="button">
                             </div>
                         </fieldset>
                     </form>
                 </div>
+</div>
+<!-- footer content -->                            
                 <div id="ft">
                     <div>
-                    <a href="/Ohana/Terms">Terms</a>
-                    <a href="/Ohana/Policies">Policies</a>
-                    <a href="/Ohana/Warranty">Warranty</a>
-                    Ohana Family Arcades - Quality Made to Order Arcades at a 
-                    fraction of the cost!
-                    <a href="/Ohana/Returns">Returns</a>
-                    <a href="/Ohana/Contact">Contact Us</a>
-                    <a href="/Ohana/Careers">Careers</a>
-                </div>
+                        <a href="/Ohana/Terms">Terms</a>
+                        <a href="/Ohana/Policies">Policies</a>
+                        <a href="/Ohana/Warranty">Warranty</a>
+                        Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
+                        fraction of the cost!
+                        <a href="/Ohana/Returns">Returns</a>
+                        <a href="/Ohana/Contact">Contact Us</a>
+                        <a href="/Ohana/Careers">Careers</a>
+                    </div>
                 </div>
         </body>
     </html>
-</div>

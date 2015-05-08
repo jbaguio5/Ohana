@@ -17,22 +17,29 @@ public class ForgotPasswordServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //get request parameter and set to String of same name
         String username = request.getParameter("username");
+        //connect to database
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("OhanaPU");
         EntityManager em = emf.createEntityManager();
         try {
-           Users user = (Users) em.createNamedQuery("Users.findByUsername")
+            //look up user by username
+            Users user = (Users) em.createNamedQuery("Users.findByUsername")
                     .setParameter("username", username)
                     .getSingleResult();
-            
+            //set user attribute for user
             request.setAttribute("user", user);
-            request.getRequestDispatcher("forgotPass2.jsp").forward(request, response);
+            //close entity manager
+            em.close();
+            //forward to jsp
+            request.getRequestDispatcher("WEB-INF/forgotPass2.jsp").forward(request, response);
+            //exception handling
         } catch (NoResultException nre) {
             request.setAttribute("flash", "Username does not exist!");
-            request.getRequestDispatcher("fotgotPass.jsp").forward(request, response);
-        } catch (Exception e) {
+            request.getRequestDispatcher("WEB-INF/forgotPass.jsp").forward(request, response);
+        } catch (ServletException | IOException e) {
             request.setAttribute("flash", e.getMessage());
-            request.getRequestDispatcher("forgotPass.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/forgotPass.jsp").forward(request, response);
         }
     }
 

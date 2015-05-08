@@ -16,6 +16,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "USERS", catalog = "", schema = "FAMARCADES")
 @NamedQueries({
+    //jpql named queries
     @NamedQuery(name = "Users.findAll", query = "SELECT u FROM Users u"),
     @NamedQuery(name = "Users.findByUsername", query = "SELECT u FROM Users u WHERE u.username = :username"),
     @NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password"),
@@ -32,6 +33,7 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "Users.findBySecanswer", query = "SELECT u FROM Users u WHERE u.secanswer = :secanswer"),
     @NamedQuery(name = "Users.findByUserid", query = "SELECT u FROM Users u WHERE u.userid = :userid")})
 public class Users implements Serializable {
+    //private fields
     private static final long serialVersionUID = 1L;
     @Basic(optional = false)
     @NotNull
@@ -40,10 +42,15 @@ public class Users implements Serializable {
     private String username;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 15)
+    @Size(min = 1, max = 100)
     @Column(name = "PASSWORD")
     private String password;
-    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    //@Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(name = "SALT")
+    private String salt;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 40)
@@ -108,11 +115,12 @@ public class Users implements Serializable {
     public Users(Integer userid) {
         this.userid = userid;
     }
-
-    public Users(Integer userid, String username, String password, String email, String firstname, String lastname, String address, String city, String state1, String zipcode, String secquestion, String secanswer) {
+    //Users constructor
+    public Users(Integer userid, String username, String password, String salt, String email, String firstname, String lastname, String address, String city, String state1, String zipcode, String secquestion, String secanswer) {
         this.userid = userid;
         this.username = username;
         this.password = password;
+        this.salt = salt;
         this.email = email;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -123,7 +131,7 @@ public class Users implements Serializable {
         this.secquestion = secquestion;
         this.secanswer = secanswer;
     }
-
+    //setters and getters
     public String getUsername() {
         return username;
     }
@@ -235,6 +243,14 @@ public class Users implements Serializable {
     public void setUserid(Integer userid) {
         this.userid = userid;
     }
+    
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
 
     @Override
     public int hashCode() {
@@ -260,5 +276,4 @@ public class Users implements Serializable {
     public String toString() {
         return "com.ohanaFamily.Users[ userid=" + userid + " ]";
     }
-
 }
