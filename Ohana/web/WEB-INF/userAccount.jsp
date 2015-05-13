@@ -40,7 +40,7 @@
                             <c:when test="${sessionScope.user.username != null}">
                                 <c:choose>
                                     <c:when test="${sessionScope.user.username == 'admin'}">
-                                    <li><a href="admin.jsp">Admin</a></li>
+                                    <li><a href="/Ohana/Admin">Admin</a></li>
                                     </c:when>
                                     <c:otherwise>
                                     <li><a href="/Ohana/Account">Account</a></li>
