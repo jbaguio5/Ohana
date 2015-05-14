@@ -4,6 +4,16 @@
     margin-right: auto;
     width: 1250px;
 }
+/* Margin wrapper for products page */
+#prodWrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1400px;
+}
+
+html {
+    font-family: Verdana;
+}
 
 /* Body Background color */
 body{
@@ -120,7 +130,7 @@ p.about{
     text-align: justify;
     color: black;
     margin: 20px 150px 75px;
-    font-family: "book antiqua";
+    font-family: Verdana;
     font-size: 20px;
     line-height: 2em;
 }
@@ -130,7 +140,7 @@ p.terms{
     text-align: justify;
     color: black;
     margin: 10px 85px 40px;
-    font-family: "book antiqua";
+    font-family: Verdana;
     font-size: 15px;
     line-height: 2em;
 }
@@ -140,7 +150,7 @@ p.posting{
     text-align: justify;
     color: black;
     margin: 1px 10px 2px;
-    font-family: "book antiqua";
+    font-family: Verdana;
     font-size: 18px;
     line-height: 2em;
 }
@@ -174,11 +184,11 @@ p.posting{
 
 /* Styling for un-ordered list for side box */
 .sidebox ul li {
-      list-style-type: none;
-      text-align: center;
-      font-weight: bold;
-      color: darkorange;
-      font-size: larger;
+    list-style-type: none;
+    text-align: center;
+    font-weight: bold;
+    color: darkorange;
+    font-size: larger;
 }
 
 /* wrapper for forms */
@@ -231,7 +241,7 @@ div.login{
     margin-top: 5em;
     text-align: center;
     color: white;
-    font-family: "Lucinda Grande",Arial;
+    font-family: Verdana;
     font-size: 12pt;
 }
 
@@ -358,6 +368,7 @@ fieldset label {
 .userbycart {
     float: right;
     margin-top: 5px;
+    padding-left: 0.5em;
     font-size: large;
     font-weight: bold;
 }
@@ -407,7 +418,7 @@ fieldset label {
 /* user not logged in / no cart / no add to cart styling */
 .noCartSignIn {
     margin-left: 20em;
-    margin-right: 10.5em;
+    margin-right: 13.5em;
     color: darkorange;
     font-size: larger;
     border: 2px solid black;

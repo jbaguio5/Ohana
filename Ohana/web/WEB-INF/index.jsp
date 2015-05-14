@@ -5,13 +5,13 @@
 <div id="wrapper">
     <html>
         <head>
-<!-- title and page icon -->
+            <!-- title and page icon -->
             <title>Ohana Family&trade; Arcades</title>
             <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
             <link rel="stylesheet" type="text/css" href="styles/main.css">
             <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
-<!-- veiwcart button and logged in user display -->
+                    <!-- veiwcart button and logged in user display -->
                 <p class="userbycart" style="color: green"> ${sessionScope.user.username}</p>
                 <p class="userbycart">Logged In:</p>
                 <form class="cart" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
@@ -23,13 +23,35 @@
                 </form>
             </c:when>
         </c:choose>
+        <script type="text/javascript">
+            var gamesA = new Array(); // create new array to preload images
+            gamesA[0] = new Image(); // create new instance of image object
+            gamesA[0].src = "images/Gallery/mspacgalaga.png"; // set image src property to image path, preloading image in the process
+            gamesA[1] = new Image();
+            gamesA[1].src = "images/Gallery/pacburger.png";
+            gamesA[2] = new Image();
+            gamesA[2].src = "images/Gallery/galaxinvad.png";
+            gamesA[3] = new Image();
+            gamesA[3].src = "images/Gallery/centimilli.png";
+
+            var gamesB = new Array();
+            gamesB[0] = new Image();
+            gamesB[0].src = "images/Gallery/dkdkjr.png";
+            gamesB[1] = new Image();
+            gamesB[1].src = "images/Gallery/dk3dig.png";
+            gamesB[2] = new Image();
+            gamesB[2].src = "images/Gallery/1942gal3.png";
+            gamesB[3] = new Image();
+            gamesB[3].src = "images/Gallery/pinbreak.png";
+
+        </script>
         </head>
         <body>
-<!-- company logo and motto-->
+            <!-- company logo and motto-->
             <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
             <p class="center">Quality Made to Order Arcades at a fraction of the 
                 cost!</p>
-<!-- site navigation bar -->
+            <!-- site navigation bar -->
             <nav>
                 <ul>
                     <li><a href="/Ohana/Home">Home</a></li>
@@ -56,44 +78,78 @@
             </nav>
             <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
-<!-- user welcome -->
+                    <!-- user welcome -->
                     <h2 class="welcome">Welcome ${sessionScope.user.firstname}</h2>
                 </c:when>
             </c:choose>
-<!-- flash message -->
-                    <h3>${flash}</h3>
-<!-- page content -->
-                    <div class="boxdeco">
-     <!-- website welcome info -->
+            <!-- flash message -->
+            <h3>${flash}</h3>
+            <!-- page content -->
+            <div class="boxdeco">
+                <!-- website welcome info -->
                 <div>
                     <p class="center">Welcome to Ohana Family&trade; Arcades</p>
                     <p class="center">We offer fully built arcades as well as parts needed 
                         for your own build!</p></br>
                 </div>
-     <!-- picture slideshow -->
+                <!-- picture slideshow -->
                 <div>
-                        <iframe width="300" height="214" src="//www.cincopa.com/media-platform/iframe.aspx?fid=AACA_jMIOhqY" frameborder="0" allowfullscreen scrolling="no"></iframe>
-                        <iframe width="300" height="214" src="//www.cincopa.com/media-platform/iframe.aspx?fid=AUEAAj81O1de" frameborder="0" allowfullscreen scrolling="no"></iframe>
-                        <iframe width="300" height="214" src="//www.cincopa.com/media-platform/iframe.aspx?fid=AYFAghMROp3e" frameborder="0" allowfullscreen scrolling="no"></iframe>
+                    <img style="float: left" src="images/Gallery/mspacgalaga.png" id="a" width="193" height="500" />
+                    <script type="text/javascript">
+                        //variable that will increment through the images
+                        var stepA = 0;
+                        function slideitA() {
+                            //if browser does not support the image object, exit.
+                            if (!document.images)
+                                return;
+                            document.getElementById('a').src = gamesA[stepA].src;
+                            if (stepA < 3)
+                                stepA++;
+                            else
+                                stepA = 0;
+                            //call function "slideit()" every 2.5 seconds
+                            setTimeout("slideitA()", 2500);
+                        }
+                        slideitA();
+                    </script>
+                    <img style="margin-left: 1.5em" src="images/Gallery/ArcadeFront.png" width="500" height="500" />
+                    <img style="float: right" src="images/Gallery/balltop---joystick.png" id="b" width="193" height="500" />
+                    <script type="text/javascript">
+                        //variable that will increment through the images
+                        var stepB = 0;
+                        function slideitB() {
+                            //if browser does not support the image object, exit.
+                            if (!document.images)
+                                return;
+                            document.getElementById('b').src = gamesB[stepB].src;
+                            if (stepB < 3)
+                                stepB++;
+                            else
+                                stepB = 0;
+                            //call function "slideit()" every 2.5 seconds
+                            setTimeout("slideitB()", 2500);
+                        }
+                        slideitB();
+                    </script>
                 </div>
-     <!-- register link -->
+                <!-- register link -->
                 <div style="margin-top: 3em">
                     <a href="/Ohana/Join"><img class="center" src="images/Sign-Up-Today.png"/></a></br>
                 </div>
             </div>
 </div>
 <!-- footer content -->
-            <div id="ft">
-                <div>
-                    <a href="/Ohana/Terms">Terms</a>
-                    <a href="/Ohana/Policies">Policies</a>
-                    <a href="/Ohana/Warranty">Warranty</a>
-                    Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
-                    fraction of the cost!
-                    <a href="/Ohana/Returns">Returns</a>
-                    <a href="/Ohana/Contact">Contact Us</a>
-                    <a href="/Ohana/Careers">Careers</a>
-                </div>
-            </div>
-        </body>
-    </html>
+<div id="ft">
+    <div>
+        <a href="/Ohana/Terms">Terms</a>
+        <a href="/Ohana/Policies">Policies</a>
+        <a href="/Ohana/Warranty">Warranty</a>
+        Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
+        fraction of the cost!
+        <a href="/Ohana/Returns">Returns</a>
+        <a href="/Ohana/Contact">Contact Us</a>
+        <a href="/Ohana/Careers">Careers</a>
+    </div>
+</div>
+</body>
+</html>

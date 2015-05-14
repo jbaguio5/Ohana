@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <!-- page wrapper -->
-<div id="wrapper">
+<div id="ProdWrapper">
     <html>
         <head>
 <!-- title and shortcut icon -->            
@@ -114,7 +114,7 @@
                         </c:when>
                         <c:otherwise>
      <!-- no PayPal button Need to Sign In -->
-                            <a href="login.jsp" style="text-decoration: none"><p class="noCartSignIn">Login to Add to Cart</p></a>
+     <a href="/Ohana/LoginMain" style="text-decoration: none"><p class="noCartSignIn">&nbsp;&nbsp;&nbsp;Login to Add to Cart</p></a>
                             <a style="float: right">Price: $${products.price}</a></br>
                         </c:otherwise>
                     </c:choose>
