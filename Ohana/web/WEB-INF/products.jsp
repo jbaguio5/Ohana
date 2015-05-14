@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <!-- page wrapper -->
-<div id="ProdWrapper">
+<div id="products">
     <html>
         <head>
 <!-- title and shortcut icon -->            
