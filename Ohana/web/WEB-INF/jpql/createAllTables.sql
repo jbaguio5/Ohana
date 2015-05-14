@@ -1,6 +1,6 @@
 drop table USERS;
 
-create table USERS (
+create table FAMARCADES.USERS (
 username varchar(15) not null unique,
 password varchar(40) not null,
 salt varchar(15),
@@ -19,7 +19,7 @@ userId int  generated always as identity(start with 1, increment by 1) primary k
 
 drop table PRODUCTS;
 
-create table PRODUCTS (
+create table FAMARCADES.PRODUCTS (
 description varchar(50) not null,
 content varchar(500) not null,
 feature1 varchar(200),
@@ -33,7 +33,7 @@ picture blob,
 picType varchar(20),
 id integer generated always as identity(start with 1, increment by 1) primary key);
 
-insert into USERS (username,password,salt,email,firstName,lastName,address,
+insert into FAMARCADES.USERS (username,password,salt,email,firstName,lastName,address,
 address2,city,state1,zipCode,phone,secQuestion,secAnswer) values
 ('admin', '8e27a6460a6a43f17b88253fec2a1ba8', '[B@8df23b', 'admin@admin.com', 'admin', 
 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'why arcades?', 'hobby');

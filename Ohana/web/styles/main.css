@@ -41,7 +41,7 @@ nav ul li a:link {
 
 /* Navigation link styling after visited */
 nav ul li a:visited{
-    color: purple;
+    color: darkorange;
     border-bottom: none;
     font-weight: bold;
 }
@@ -73,6 +73,13 @@ nav.cats ul li a:link {
     border-bottom: none;
     font-weight: bold;
     font-size: smaller;
+}
+
+/* Navigation link styling after visited */
+nav.cats ul li a:visited{
+    color: darkorange;
+    border-bottom: none;
+    font-weight: bold;
 }
 
 /* Centering for Images */
