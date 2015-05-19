@@ -5,9 +5,9 @@
 <div id="wrapper">
     <html>
         <head>
-            <!-- title and page icon -->
+<!-- title and shortcut icon -->
             <title>Ohana Family&trade; Arcades</title>
-            <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
+            <link rel="icon" type="image/x-icon" href="/Ohana/favicon.ico"/>
             <link rel="stylesheet" type="text/css" href="styles/main.css">
             <c:choose>
                 <c:when test="${sessionScope.user.username != null}">
@@ -34,6 +34,10 @@
             gamesA[3] = new Image();
             gamesA[3].src = "images/Gallery/centimilli.png";
 
+            var mainPic = new Array();
+            mainPic[0] = new Image();
+            mainPic[0].src = "images/Gallery/ArcadeFront.png";
+    
             var gamesB = new Array();
             gamesB[0] = new Image();
             gamesB[0].src = "images/Gallery/dkdkjr.png";
@@ -43,14 +47,11 @@
             gamesB[2].src = "images/Gallery/1942gal3.png";
             gamesB[3] = new Image();
             gamesB[3].src = "images/Gallery/pinbreak.png";
-
         </script>
         </head>
         <body>
-            <!-- company logo and motto-->
-            <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
-            <p class="center">Quality Made to Order Arcades at a fraction of the 
-                cost!</p>
+<!-- company logo and motto-->
+            <img class="logo" src="images/other/OFA-logo.png" alt="" />
             <!-- site navigation bar -->
             <nav>
                 <ul>
@@ -84,7 +85,7 @@
             </c:choose>
             <!-- flash message -->
             <h3>${flash}</h3>
-            <!-- page content -->
+<!-- page content -->
             <div class="boxdeco">
                 <!-- website welcome info -->
                 <div>
@@ -92,7 +93,7 @@
                     <p class="center">We offer fully built arcades as well as parts needed 
                         for your own build!</p></br>
                 </div>
-                <!-- picture slideshow -->
+     <!-- picture slideshow -->
                 <div>
                     <img style="float: left" src="images/Gallery/mspacgalaga.png" id="a" width="193" height="500" />
                     <script type="text/javascript">
@@ -134,21 +135,24 @@
                 </div>
                 <!-- register link -->
                 <div style="margin-top: 3em">
-                    <a href="/Ohana/Join"><img class="center" src="images/Sign-Up-Today.png"/></a></br>
+                    <a href="/Ohana/Join"><img class="center" src="images/other/Sign-Up-Today.png"/></a></br>
                 </div>
             </div>
 </div>
 <!-- footer content -->
 <div id="ft">
     <div>
-        <a href="/Ohana/Terms">Terms</a>
-        <a href="/Ohana/Policies">Policies</a>
-        <a href="/Ohana/Warranty">Warranty</a>
-        Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
-        fraction of the cost!
-        <a href="/Ohana/Returns">Returns</a>
-        <a href="/Ohana/Contact">Contact Us</a>
-        <a href="/Ohana/Careers">Careers</a>
+        <div style="float: left">
+            <a href="/Ohana/Terms">Terms</a>
+            <a href="/Ohana/Policies">Policies</a>
+            <a href="/Ohana/Warranty">Warranty</a>
+        </div>
+        <a style="color: white">Ohana Family&trade; Arcades - More Fun...Less Money!</a>
+        <div style="float: right">
+            <a href="/Ohana/Returns">Returns</a>
+            <a href="/Ohana/Contact">Contact Us</a>
+            <a href="/Ohana/Careers">Careers</a>
+        </div>
     </div>
 </div>
 </body>

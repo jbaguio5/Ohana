@@ -425,3 +425,11 @@ fieldset label {
     padding-left: 2px;
     border-radius: .5em;
 }
+
+img.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 155px;
+    width: 700px;
+}

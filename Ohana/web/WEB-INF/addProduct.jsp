@@ -5,20 +5,18 @@
     <head>
 <!-- title and shortcut icon -->        
         <title>Ohana Family&trade; Arcades</title>
-        <link rel="shortcut icon" href="images/Ohana Family Arcades v1.0_00_trans.png"/>
+        <link rel="icon" type="image/x-icon" href="/Ohana/favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="styles/main.css">
     </head>
     <body>
 <!-- company logo and motto -->        
-        <img class="center" src="images/Ohana Family Arcades v1.0_00_trans.png" alt="" /></br>
-        <p class="center">Quality Made to Order Arcades at a fraction of the 
-            cost!</p></br>
+        <img class="logo" src="images/other/OFA-logo.png" alt="" />
 <!-- page content -->        
         <div class="login">
             <form action="/Ohana/AddProduct" enctype="multipart/form-data" method="post">
                 <fieldset>
                     <legend>Add Product</legend>
-     <!-- flash message -->                    
+                    <!-- flash message -->                    
                     <h3>${flash}</h3>
                     <label for="description"><font color="red">*</font> Description:</label>
                     <input type="text" name="description" value="" placeholder=" description"required/></br>  
@@ -45,7 +43,7 @@
                     <input type="text" name="price" value="" placeholder=" price"/></br>
 
                     <label for="prodType"><font color="red">*</font> Product Type:</label>
-     <!-- product type down down menu -->                    
+                    <!-- product type down down menu -->                    
                     <select name="prodType">
                         <option>button</option>
                         <option>joystick</option>
@@ -53,7 +51,7 @@
                         <option>cabinetParts</option>
                         <option>arcades</option>
                     </select></br>
-     <!-- picture file select -->
+                    <!-- picture file select -->
                     <label for="picture"><font color="red">*</font> Picture:</label>
                     <input type="file" name="picture" value="" /></br></br></br>
 
@@ -66,14 +64,17 @@
 <!-- footer content -->                    
         <div id="ft">
             <div>
-                <a href="/Ohana/Terms">Terms</a>
-                <a href="/Ohana/Policies">Policies</a>
-                <a href="/Ohana/Warranty">Warranty</a>
-                Ohana Family&trade; Arcades - Quality Made to Order Arcades at a 
-                fraction of the cost!
-                <a href="/Ohana/Returns">Returns</a>
-                <a href="/Ohana/Contact">Contact Us</a>
-                <a href="/Ohana/Careers">Careers</a>
+                <div style="float: left">
+                    <a href="/Ohana/Terms">Terms</a>
+                    <a href="/Ohana/Policies">Policies</a>
+                    <a href="/Ohana/Warranty">Warranty</a>
+                </div>
+                <a style="color: white">Ohana Family&trade; Arcades - More Fun...Less Money!</a>
+                <div style="float: right">
+                    <a href="/Ohana/Returns">Returns</a>
+                    <a href="/Ohana/Contact">Contact Us</a>
+                    <a href="/Ohana/Careers">Careers</a>
+                </div>
             </div>
         </div>
     </body>
