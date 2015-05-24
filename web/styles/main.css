@@ -1,0 +1,463 @@
+/* Margin wrapper.  Prevents fullscreen to adjust Styling */
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1250px;
+}
+/* Margin wrapper for products page */
+#products {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1400px;
+}
+
+html {
+    font-family: Verdana;
+}
+
+/* Body Background color */
+body{
+    background: lightblue;
+    max-width: 100%;
+}
+
+/* Navigation wrapper styling */
+nav{
+    background-color: lightblue;
+    margin: 10px 10px 0px 10px;
+}
+
+/* Navigation un-ordered list wrapper styling */
+nav ul{
+    margin: 0px;
+    list-style-type: none;
+    padding: 5px 0px 5px 0px;
+    text-align: center;
+}
+
+/* Navigation list styling */
+nav ul li{
+    display: inline;
+    padding: 5px 10px 5px 10px;
+    font-size: 25px;
+    margin: 20px 20px;
+}
+
+/* Navigation link general styling for Nav Bar */
+nav ul li a:link {
+    color: darkorange;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+/* Navigation link styling after visited */
+nav ul li a:visited{
+    color: darkorange;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+/* Navigation link styling after hovering over */
+nav ul li a:hover{
+    color: darkorange;
+    border-bottom: none;
+    font-weight: bolder;
+}
+
+/* Navigation list colored box around pre-selected option/link */
+nav ul li.selected{
+    background-color: blue;
+}
+
+/* Navigation wrapper for Categories */
+nav.cats {
+    background-color: lightblue;
+    background: #dddddd;
+    border: 3px solid darkorange;
+    border-radius: .5em;
+    margin: 25px 180px 0px 180px;
+}
+
+/* Navigation un-ordered list link styling */
+nav.cats ul li a:link {
+    color: darkorange;
+    border-bottom: none;
+    font-weight: bold;
+    font-size: smaller;
+}
+
+/* Navigation link styling after visited */
+nav.cats ul li a:visited{
+    color: darkorange;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+/* Centering for Images */
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Centering for Paragraghs */
+p.center{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Centering for Heading 1's' */
+h1.center{
+    text-align: center;
+    color: black;
+}
+
+/* Centering for Heading 3's' */
+h3.center{
+    text-align: center;
+    color: black;
+}
+
+/* Login Welcome flash Styling */
+h2.welcome {
+    text-align: center;
+    color: green;
+}
+
+/* About Page styling for paragraghs */
+p.about{
+    text-align: justify;
+    color: black;
+    margin: 20px 150px 75px;
+    font-family: Verdana;
+    font-size: 20px;
+    line-height: 2em;
+}
+
+/* Terms Page styling for paragraphs */
+p.terms{
+    text-align: justify;
+    color: black;
+    margin: 10px 85px 40px;
+    font-family: Verdana;
+    font-size: 15px;
+    line-height: 2em;
+}
+
+/* job posting styling for paragraghs */
+p.posting{
+    text-align: justify;
+    color: black;
+    margin: 1px 10px 2px;
+    font-family: Verdana;
+    font-size: 18px;
+    line-height: 2em;
+}
+
+/* Margin styling for Careers Page */
+.job {
+    margin: 0px 85px;
+}
+
+/* Styling for colored box around page content */
+.boxdeco {
+    margin: 35px 150px 18px;
+    border: 1px solid darkorange;
+    padding: 35px 12px 12px;
+    background: #dddddd;
+    border-radius: .5em;
+    box-shadow: 10px 10px 5px orange;
+}
+
+/* Wrapper styling for side box content */
+.sidebox {
+    margin: 53px 20px 18px 5px;
+    border: 1px solid darkorange;
+    padding: 2px 25px 2px 0px;
+    background: #dddddd;
+    border-radius: .5em;
+    box-shadow: 10px 10px 5px orange;
+    text-align: center;
+    display: inline;
+}
+
+/* Styling for un-ordered list for side box */
+.sidebox ul li {
+    list-style-type: none;
+    text-align: center;
+    font-weight: bold;
+    color: darkorange;
+    font-size: larger;
+}
+
+/* wrapper for forms */
+div form{
+    text-align: center;
+    line-height: 200%;
+}
+
+/* wrapper for fieldset type forms */
+fieldset {
+    padding: 1em;
+    font:100%/1 sans-serif;
+    line-height: 1em;
+}
+
+/* label styling for fieldset forms */
+label {
+    float:inside;
+    width:25%;
+    margin-right:2em;
+    padding-top:0.2em;
+    text-align:right;
+    font-weight:bold;
+    line-height: 2em;
+}
+
+/* text styling for legend wrapper */
+legend{
+    font-weight: bold;
+}
+
+/* wrapper legend margins */
+div.legend{
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+/* wrapper for login page margins */
+div.login{
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 5em;
+}
+
+/* footer div styling */
+#ft {
+    background: #222222;
+    clear: both;
+    padding: 1em;
+    margin-top: 5em;
+    text-align: center;
+    color: white;
+    font-family: Verdana;
+    font-size: 12pt;
+    width: 1024px;
+    min-width: 100%;
+    
+}
+
+/* footer styling for links */
+#ft a {
+    display: inline-block;
+    color: darkorange;
+    margin: 0px 20px;
+    text-align: center;
+
+}
+
+/* text coloring for company name */
+span.ohananame{
+    color: #ff6500;
+    font-weight: bolder;
+}
+
+/* Product Display wrapper styling */
+.proddisp {
+    margin-bottom: 18px;
+    margin-top: 3em;
+    margin-left: 10em;
+    margin-right: 10em;
+    border: 1px solid darkorange;
+    padding: 12px;
+    background: #dddddd;
+    border-radius: .5em;
+    box-shadow: 10px 10px 5px orange;
+    font-weight: bold;
+    font-size: large;
+}
+
+/* Product features styling */
+.prodfeatures {
+    margin-top: 10px;
+    margin-left: 340px;
+}
+
+/* Product Image styling */
+.imgdisp{
+    margin-right: 70px;
+    float: left;
+}
+
+/* remove product page image styling */
+.listImg {
+    width:135px;
+    height: 115px;
+}
+
+/* Product description styling */
+.proddesc{
+    color: darkorange;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+/* remove bullets from lists */
+li nobull{
+    list-style-type: none;
+    display: inline;
+}
+
+/* Product content styling */
+.prodcont{
+    margin-top: 0px;
+    margin-left: 20em;
+    margin-right: 5em;
+}
+
+/* inline styling for various items */
+.inline {
+    display: inline;
+}
+
+/* table styling for admin page */
+table {
+    width: 200em;
+    height: 100%;
+    border: none;
+}
+
+/* regforgot margin styling */
+.regforgot {
+    margin-top: 2em;
+}
+
+/* submit button margin */
+.submit {
+    margin-top: 1px;
+}
+
+/* button size styling */
+.button {
+    height: 40px;
+    width: 125px;
+}
+
+/* fieldset label display styling */
+fieldset label {
+    display: inline-block;
+}
+
+/* larger text styling */
+.larger {
+    font-size: x-large;
+}
+
+/* Alternate Product content styling */
+.prodcontent {
+    margin-top: 10px;
+    margin-left: 325px;
+}
+
+/* float styling for viewcart button */
+.cart {
+    float: right;
+}
+
+/* logged in user styling to the right of viewcart button */
+.userbycart {
+    float: right;
+    margin-top: 5px;
+    padding-left: 0.5em;
+    font-size: large;
+    font-weight: bold;
+}
+
+/* contact page margins */
+.contact {
+    margin: 0px 100px;
+}
+
+.admin {
+    margin: 0px 50px;
+    display: inline;
+}
+
+.amdin label form fieldset legend input {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* remove user page styling */
+.userList {
+    width: 150px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2em;
+    margin-left: 16em;
+}
+
+/* remove user page table styling */
+.userList td{
+    border: 1px solid black;
+    padding:0px 25px;
+    text-align: center;
+}
+
+/* remove paroduct page styling */
+.productList {
+    width: 150px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2em;
+    margin-left: 12em;
+}
+
+/* remove product page table styling */
+.productList td{
+    border: 1px solid black;
+    padding:0px 25px;
+    text-align: center;
+}
+
+/* div wrapper for left column */
+#left-column {
+    float: left;
+}
+
+/* user not logged in / no cart / no add to cart styling */
+.noCartSignIn {
+    margin-left: 20em;
+    margin-right: 13.5em;
+    color: darkorange;
+    font-size: larger;
+    border: 2px solid black;
+    padding-left: 2px;
+    border-radius: .5em;
+}
+
+img.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 155px;
+    width: 700px;
+}
+
+img.loggedInLogo {
+    display: inline-block;
+    margin-left: 265px;
+    margin-right: 0px;
+    height: 155px;
+    width: 700px;
+}
+
+img.prodLoggedIn {
+    display: inline-block;
+    margin-left: 360px;
+    margin-right: 0px;
+    height: 155px;
+    width: 700px;
+}
