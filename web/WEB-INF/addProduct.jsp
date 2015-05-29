@@ -18,6 +18,31 @@
                     <a href="/Home"><img class="logo" src="images/other/OFA-logo.png"/></a>
                 </c:otherwise>
             </c:choose>
+        <!-- site navigation bar -->            
+            <nav>
+                <ul>
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/About">About</a></li>
+                    <li><a href="/Products">Products</a></li>
+                    <li><a href="/Contact">Contact</a></li>
+                        <c:choose>
+                            <c:when test="${sessionScope.user.username != null}">
+                                <c:choose>
+                                    <c:when test="${sessionScope.user.username == 'admin'}">
+                                    <li><a href="/Admin">Admin</a></li>
+                                    </c:when>
+                                    <c:otherwise>
+                                    <li><a href="/Account">Account</a></li>
+                                    </c:otherwise>
+                                </c:choose>
+                            <li><a href="/Logout">Logout</a></li>
+                            </c:when>
+                            <c:otherwise>
+                            <li><a href="/LoginMain">Login</a></li>
+                            </c:otherwise>
+                        </c:choose>
+                </ul>
+            </nav>
 <!-- page content -->        
         <div class="login">
             <form action="/AddProduct" enctype="multipart/form-data" method="post">

@@ -85,12 +85,6 @@
                         </c:choose>
                 </ul>
             </nav>
-            <c:choose>
-                <c:when test="${sessionScope.user.username != null}">
-                    <!-- user welcome -->
-                    <h2 class="welcome">Welcome ${sessionScope.user.firstname}</h2>
-                </c:when>
-            </c:choose>
             <!-- flash message -->
             <h3>${flash}</h3>
             <!-- page content -->

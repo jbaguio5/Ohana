@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
             if (username.equals("admin")) {
                 request.getRequestDispatcher("WEB-INF/admin.jsp").forward(request, response);
             } else {
-                request.getRequestDispatcher("WEB-INF/index.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/loginSuccess.jsp").forward(request, response);
             }
             //exception handling
         } catch (NoResultException nre) {

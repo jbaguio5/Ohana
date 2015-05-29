@@ -84,6 +84,7 @@
             </div>
 </div>
 <!-- footer content -->
+<a style="color: lightblue; float: right" href="/ThankYou">Thank You</a>
             <div id="ft">
                 <div>
         <div style="float: left">
